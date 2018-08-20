@@ -3,7 +3,7 @@ import Events from '../Events';
 import {Route, Switch} from 'react-router-dom';
 
 
-
+// Is this the category page?
 // FETCH LINKS ARE MISSING!!!!!!!!!!!!!!!!!!!!
 
 
@@ -46,6 +46,7 @@ class EventContainer extends Component {
   //   }
   // }
 
+
   deleteEvent = async (id, e) => {
     e.preventDefault();
     console.log('deleteEvent function is being called, this is the id: ', id);
@@ -62,6 +63,7 @@ class EventContainer extends Component {
     }
   }
 
+
   showModal = (id) => {
 
   }
@@ -73,7 +75,13 @@ class EventContainer extends Component {
 
   render(){
     return(
-
+      <div>
+        <Events
+          events={this.state.events}
+          deleteEvent={this.deleteEvent}
+          showModal={this.showModal}
+        />
+      </div>
     )
   }
 }
