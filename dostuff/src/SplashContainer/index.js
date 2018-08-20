@@ -2,36 +2,44 @@ import React, { Component } from 'react';
 import Login from './Login';
 
 
-// FETCH LINKS ARE MISSING!!!!!!!!!!!!!!!!!!!!
-
-
 
 class SplashContainer extends Component {
   constructor(){
     super();
     this.state = {
-      login: '',
+      username: '',
       password: '',
       // skipLogin: null
     }
 
     getCategories = async () => {
-      const categories = await fetch('', {
-        credentials: 'include',
-        method: 'GET'
-      });
-      // const parsedCategories = categories.json();
+      try{
+        const categories = await fetch('', {
+          credentials: 'include',
+          method: 'GET'
+        });
+        // const parsedCategories = categories.json(); 
+      } catch (err) {
+        console.log(err, 'error in getCategories in SplashContainer')
+      }
 
     handleSubmit = async (e) => {
-    e.preventDefault();
-    const loginResponse = await fetch('', {
-      method: 'POST',
-      credentials: 'include',
-      body: JSON.stringify(this.state),
-      headers: {
-        'Content-Type': 'application/json'
+      try{
+        e.preventDefault();
+        const loginResponse = await fetch('', {
+          method: 'POST',
+          credentials: 'include',
+          body: JSON.stringify(this.state),
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        })
+
+        cosnt loginResponseJSON = await login
+      } catch (err) {
+        console.log(err, 'error in handleSubmit in SplashContainer')
       }
-    });
+    }
 
     handleChange = (e) => {
       this.setState({[e.target.name]: e.target.value});
@@ -50,7 +58,7 @@ class SplashContainer extends Component {
               <form onSubmit={this.handleSubmit}>
                 <label>
                   Username:
-                  <input name='login' placeholder='Username' onChange={this.handleChange} />
+                  <input name='username' placeholder='Username' onChange={this.handleChange} />
                 </label>
                 <label>
                   Password:

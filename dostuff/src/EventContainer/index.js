@@ -4,7 +4,6 @@ import {Route, Switch} from 'react-router-dom';
 
 
 // Is this the category page?
-// FETCH LINKS ARE MISSING!!!!!!!!!!!!!!!!!!!!
 
 
 
@@ -29,7 +28,7 @@ class EventContainer extends Component {
 
 
   getEvents = async () => {
-    const events = await fetch('', {
+    const events = await fetch('http://localhost:8000/api/events', {
       credentials: 'include',
       method: 'GET'
     });
@@ -51,7 +50,7 @@ class EventContainer extends Component {
     e.preventDefault();
     console.log('deleteEvent function is being called, this is the id: ', id);
     try {
-      const deleteEvent = await fetch('' + id, {
+      const deleteEvent = await fetch('http://localhost:8000/api/deleteevent' + id, {
         method: 'DELETE'
       });
 
