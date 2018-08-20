@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import Events from '../Events';
+import {Route, Switch} from 'react-router-dom';
+
 
 
 class EventContainer extends Component {
@@ -21,7 +23,7 @@ class EventContainer extends Component {
     });
   }
 
-  
+
 }
 
 
