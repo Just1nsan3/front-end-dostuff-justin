@@ -9,6 +9,8 @@ class Register extends Component {
 			confirm: ""
 		}
 	}
+
+
 		handleSubmit = async (e) => {
 		e.preventDefault();
 
@@ -21,21 +23,20 @@ class Register extends Component {
 			}
 		});
 
-		const parsedResponse = await loginResponse.json();
+			const parsedResponse = await loginResponse.json();
 
-		if(parsedResponse.data === 'login successful') {
-			this.props.hideLoginRegister();
+			if(parsedResponse.data === 'login successful') {
+				this.props.hideLoginRegister();
 
-
+			}
 		}
 
 
 
-
-	}
 		handleChange = (e) => {
 			this.setState({[e.target.name]: e.target.value});
 		}
+
 
 			render(){
 			return(
