@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Header from './Header';
+import Login from './Login';
+import EventContainer from './EventContainer';
 import {Route, Switch} from 'react-router-dom';
 
 

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Events from '/Events';
+import Events from './Events';
 
 class CategoryEventContainer extends Component {
   constructor(){
