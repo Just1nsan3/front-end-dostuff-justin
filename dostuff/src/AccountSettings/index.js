@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 
 
-class AccountContainer extends Component{
+class AccountSettings extends Component{
   constructor(){
     super();
     this.state = {
@@ -42,7 +42,6 @@ class AccountContainer extends Component{
       </div>
     )
   }
-
-
-
 }
+
+export default AccountSettings;

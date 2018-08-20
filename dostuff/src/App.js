@@ -21,7 +21,8 @@ const App = () => {
       <Header />
       <Switch>
         <Route exact path="/" component={Login} />
-        <Route exact path="/events" component={EventContainer}/>
+        <Route exact path="/events" component={EventContainer} />
+        <Route exact path="/home" component={Home} props:categories/usercategories />
         <Route component={My404}/>
       </Switch>
     </main>
