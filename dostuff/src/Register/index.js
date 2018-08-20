@@ -14,7 +14,7 @@ class Register extends Component {
 		handleSubmit = async (e) => {
 		e.preventDefault();
 
-		const registerResponse = await fetch('https://stark-citadel-84155.herokuapp.com', {
+		const registerResponse = await fetch('http://localhost:8000/api/register', {
 			method: 'POST',
 			credentials: 'include',
 			body: JSON.stringify(this.state),

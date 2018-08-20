@@ -2,9 +2,6 @@ import React, { Component } from 'react';
 import Login from './Login';
 
 
-// FETCH LINKS ARE MISSING!!!!!!!!!!!!!!!!!!!!
-
-
 
 class SplashContainer extends Component {
   constructor(){
