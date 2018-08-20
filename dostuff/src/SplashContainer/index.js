@@ -1,31 +1,43 @@
 import React, { Component } from 'react';
+import Login from '/Login';
 
 
-// Data needed: userId, userCategories, loggedIn,  userEvents, userLocation, userCategoryEvents
-// /getAllEvents, /login
+class SplashContainer extends Component {
+  constructor(){
+    super();
+    this.state = {
+      login: '',
+      password: '',
+      // skipLogin: null
+    }
 
-const SplashContainer = () => {
-  return(
-    <ul>
-      <li><Link to='/login'>Login</Link></li>
-      <li><Link to='/register'>Register</Link></li>
-      <li><Link to='/categories'>Categories</Link></li>
-    </ul>  
-  )
+    getCategories = async () => {
+      const categories = await fetch('', {
+        credentials: 'include',
+        method: 'GET'
+      });
+      const parsedCategories = categories.json();
+      render(){
+        return(
+          <div>
+            <ul>
+              <li><Link to='/register'>Register</Link></li>
+              <li><Link to='/'>Skip Login</Link></li>
+              <li>parsedCategories</li>
+            </ul>
+            <div>
+              <form onSubmit={this.handleSubmit}>
+                <input name='login' placehold='Username'></input>
+                <input>Password</input>
+              </form>
+
+            <Login/> 
+          </div> 
+        )
+      }
+    }
+  }
 }
-
-
-
-
-  // getCategories = async () => {
-  //   const categories = await fetch('', {
-  //     credentials: 'include',
-  //     method: 'GET'
-  //   });
-  //   const parsedCategories = categories.json();
-
-  //   return parsedCategories
-  // }
 
 
 
