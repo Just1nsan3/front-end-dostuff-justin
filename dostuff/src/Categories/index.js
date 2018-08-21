@@ -1,36 +1,30 @@
-import React, {Component} from 'react';
+import React from 'react';
 
 
-// HOME PAGE
+class Categories extends Component {
+
+  clickHandle = (e) => {
+    e.preventDefault();
+    console.log(e.target)
+    console.log(typeof e.target)
+    // this.props.changeActiveCategory(e.target.value)
+  }
 
 
-
-// class Categories extends Component {}
-
-const Categories = (props) => {
-
-  const tempCat = ['other', 'food-and-drink', 'nightlife']
-
-    const categoryList = tempCat.map((category, i) => {
-
-      // Click on categories to see events? <Link to='/'> CategoryLinkContainer 
-      return (
-        <li key={category._id}>
-          <span>{category}</span>
-        </li>
-        )
-    });
-
-
-  return (
-    <ul>
-      {categoryList}
-    </ul>
-  )  
+  render() {
+    return (
+      <div>
+        {this.props.categories.map((category, i) => {
+          return (
+            <div onClick={this.clickHandle} value={category} name={category} data-cat={category} className='categoryList' key={i}>
+              <span value={category}>{category}</span>
+            </div>
+          )
+        })}
+      </div>
+    )
+  } 
 }
-
-// <button onClick={props.addCategory}>Add Interest</button>
-// <button onClick={props.deleteCategory}>Remove</button>
 
 // Where define categories? fetch call?
 // Need declare category?

@@ -35,6 +35,8 @@ class CategoryEventContainer extends Component {
     })
   }
 
+ 
+
   render() {
     return (
       <div>
@@ -51,6 +53,7 @@ class CategoryEventContainer extends Component {
         })}
 
       </div>
+            
     )
   }
 }

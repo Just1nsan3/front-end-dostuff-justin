@@ -26,14 +26,15 @@ class Register extends Component {
 				}
 			})
 	
-
 		const registerResponseJSON = await registerResponse.json();
+
 		console.log(registerResponseJSON, 'registerResponseJSON HERE')
-		if(registerResponse.status === 'status') {
-			this.props.hideLoginRegister();
+		if(registerResponseJSON.status === 200) {
+			this.props.register(this.state.location, registerResponseJSON.userid)
 		}
-	} catch (err) {
 		
+	} catch (err) {
+
 		console.log(err, 'ERROR HERE')
 		}
 	}
