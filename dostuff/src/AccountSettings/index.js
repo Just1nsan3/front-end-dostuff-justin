@@ -1,19 +1,20 @@
 import React, {Component} from 'react';
+import { Redirect } from 'react-router-dom';
 
 // Account settings page
 
 class AccountSettings extends Component{
-  constructor(){
-    super();
+  constructor(props){
+    super(props);
     this.state = {
       categories: [],
-      location: ''
+      location: this.props.userLocation
     }
   }
 
   handleSubmit = async (e) => {
   e.preventDefault();
-  const loginResponse = await fetch('http://localhost:8000/api/login', {
+  const loginResponse = await fetch('http://localhost:8000/api/edituser', {
     method: 'POST',
     credentials: 'include',
     body: JSON.stringify(this.state),
@@ -21,6 +22,7 @@ class AccountSettings extends Component{
       'Content-Type': 'application/json'
     }
   });
+  }
 
   handleChange = (e) => {
     this.setState({[e.target.name]: e.target.value});
@@ -28,20 +30,24 @@ class AccountSettings extends Component{
   // function for adding and un-adding categories to profile to narrow interests
 
   render() {
-    return (
-      <div>
-        <form onSubmit={this.handleSubmit}>
-          <label>
-            Location:
-            <input name='location' placeholder='Location' onChange={this.handleChange} />
-          </label>
-          <button onClick={saveLocation}>Save Location</button>
-        </form>      
+    if(this.props.loggedIn) {  
+      return (
+        <div>
+          <form onSubmit={this.handleSubmit}>
+            <label>
+              Location:
+              <input name='location' placeholder='Location' value={this.state.location} onChange={this.handleChange} />
+            </label>
 
 
+            <button onClick={this.handleSubmit}>Save Settings</button>
+          </form>    
+        </div>
+      )
+    } else {
+      return <Redirect to='/register' />
 
-      </div>
-    )
+    }
   }
 }
 

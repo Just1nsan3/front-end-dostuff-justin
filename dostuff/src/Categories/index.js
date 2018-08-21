@@ -7,26 +7,29 @@ import React, {Component} from 'react';
 
 // class Categories extends Component {}
 
-const Categories = (props) => {
+class Categories extends Component {
 
-  const tempCat = ['other', 'food-and-drink', 'nightlife']
-
-    const categoryList = tempCat.map((category, i) => {
-
-      // Click on categories to see events? <Link to='/'> CategoryLinkContainer 
-      return (
-        <li key={category._id}>
-          <span>{category}</span>
-        </li>
-        )
-    });
+  clickHandle = (e) => {
+    e.preventDefault();
+    console.log(e.target)
+    console.log(typeof e.target)
+    // this.props.changeActiveCategory(e.target.value)
+  }
 
 
-  return (
-    <ul>
-      {categoryList}
-    </ul>
-  )  
+  render() {
+    return (
+      <div>
+        {this.props.categories.map((category, i) => {
+          return (
+            <div onClick={this.clickHandle} value={category} name={category} data-cat={category} className='categoryList' key={i}>
+              <span value={category}>{category}</span>
+            </div>
+          )
+        })}
+      </div>
+    )
+  } 
 }
 
 // <button onClick={props.addCategory}>Add Interest</button>

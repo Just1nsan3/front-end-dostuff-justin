@@ -11,7 +11,7 @@ class Logout extends Component {
 		const logoutJSON = await logout.json()
 		console.log(logoutJSON)
 		if(logoutJSON.status === 200) {
-			this.props.history.push('/')
+			this.props.logout()
 		}
 	}
 	render(){

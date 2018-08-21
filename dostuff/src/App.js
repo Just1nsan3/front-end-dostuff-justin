@@ -4,11 +4,12 @@ import './App.css';
 import Header from './Header';
 import CategoryEventContainer from './CategoryEventContainer'
 import EventContainer from './EventContainer';
-import { withRouter, Route, Switch} from 'react-router-dom';
+import { withRouter, Route, Switch, Redirect} from 'react-router-dom';
 import Categories from './Categories';
 import SplashContainer from './SplashContainer';
 import Register from './Register'
 import Logout from './Logout'
+import AccountSettings from './AccountSettings'
 
 
 const My404 = () => {
@@ -23,17 +24,58 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
+      //all categories are stored here
       categories: [],
-      userInfo: {},
+      //user specific categories saved here
+      userCategories: [],
+      //information about user to be stored here
+      userLocation: '',
+      //userid saver here
+      userId: '',
+      //all events saved here
       allEvents: [],
+      //last active page stored here
       activePage: '',
+      //events user has saved
       userEvents: [],
-      activeCategory: 'other'
+      //category that user last picked in home page
+      activeCategory: 'other',
+      //track status of user login
+      loggedIn: false
     }
   }
 
   //purpose is to change color of next active method to green
   placeholderMethod = () => {
+  }
+
+  login = (userId) => {
+    this.setState({
+      loggedIn: true,
+      userId: userId
+    })
+    this.props.history.push('/categories')
+  }
+
+  register = (location, userId) => {
+
+    this.setState({
+      loggedIn: true,
+      userLocation: location,
+      userId: userId
+    })
+    //
+    //  CHANGE TO ACCOUNT SETTINGS PAGE
+    //
+    this.props.history.push('/categories')
+  }
+
+  logout = () => {
+    this.setState({
+      loggedIn: false,
+      userId: ''
+    })
+    this.props.history.push('/')
   }
 
   //make initial call to load data from server
@@ -69,18 +111,27 @@ class App extends Component {
     }
   }
 
+   changeActiveCategory = (category) => {
+    this.setState({
+      activeCategory: category
+    })
+    this.props.history.push('/categoryevent')
+  }
+
   render() {
     return (
       <main>
         <Header />
         <Switch>
           <Route exact path="/events" component={EventContainer} />
-          <Route exact path="/" component={SplashContainer} />
-          <Route exact path='/categoryevent' render={() => <CategoryEventContainer allEvents={this.state.allEvents} categories={this.state.categories}activeCategory={this.state.activeCategory} />}
+          <Route exact path='/' render={() => <SplashContainer login={this.login} loggedIn={this.state.loggedIn}/> } />
+          <Route exact path='/categoryevent' render={() => <CategoryEventContainer allEvents={this.state.allEvents} categories={this.state.categories} activeCategory={this.state.activeCategory} />}
           />
-          <Route exact path="/Register" component={Register} />
-          <Route exact path="/Categories" component={Categories} />
-          <Route exact path="/logout" component={Logout} />
+          <Route exact path='/categories' render={() => <Categories categories={this.state.categories} changeActiveCategory={this.changeActiveCategory} />}
+          />
+          <Route exact path='/register' render={() => <Register register={this.register} /> } />
+          <Route exact path='/logout' render={() => <Logout logout={this.logout} /> } />
+          <Route exact path='/settings' render={() => <AccountSettings loggedIn={this.state.loggedIn} userLocation={this.state.userLocation} categories={this.state.categories} /> } />
 
           <Route component={My404}/>
         </Switch>

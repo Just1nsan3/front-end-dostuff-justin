@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 // import Login from './Login';
-import {Route, Switch} from 'react-router-dom';
+import {Route, Switch, Redirect} from 'react-router-dom';
 import {Link} from 'react-router-dom';
 import PasswordMask from 'react-password-mask';
 
@@ -15,83 +15,67 @@ class SplashContainer extends Component {
     }
   }
 
-    // getCategories = async () => {
-    //   try{
-    //     const categories = await fetch('', {
-    //       credentials: 'include',
-    //       method: 'GET'
-    //     });
-    //     // const parsedCategories = categories.json(); 
-    //   } catch (err) {
-    //     console.log(err, 'error in getCategories in SplashContainer')
-    //   }
-
-    // <input name='password' placeholder='Password' onChange={this.handleChange} />
-
-    // <PasswordMask
-    //                   name="password"
-    //                   placeholder="Enter password"
-    //                   useVendorStyles={false}
-    //                   value={this.state.password}
-    //                   onChange={this.handleChange.bind(this)}
-    //                 />
-
-    handleSubmit = async (e) => {
-      try{
-        e.preventDefault();
-        const loginResponse = await fetch('http://localhost:8000/api/login', {
-          method: 'POST',
-          credentials: 'include',
-          body: JSON.stringify(this.state),
-          headers: {
-            'Content-Type': 'application/json'
-          }
-        })
-
-
-        const loginResponseJSON = await loginResponse.json()
-
-        console.log(loginResponseJSON)
-
-        if(loginResponseJSON.status === 200) {
-          this.props.history.push('/categories')
+  handleSubmit = async (e) => {
+    try{
+      e.preventDefault();
+      const loginResponse = await fetch('http://localhost:8000/api/login', {
+        method: 'POST',
+        credentials: 'include',
+        body: JSON.stringify(this.state),
+        headers: {
+          'Content-Type': 'application/json'
         }
+      })
 
-      } catch (err) {
-        console.log(err, 'stop lying!')
+
+      const loginResponseJSON = await loginResponse.json()
+
+      console.log(loginResponseJSON)
+
+      if(loginResponseJSON.status === 200) {
+        this.props.login(loginResponseJSON.userid)
+        // this.props.history.push('/categories')
       }
-    }
 
-    handleChange = (e) => {
-      this.setState({[e.target.name]: e.target.value});
+    } catch (err) {
+      console.log(err, 'stop lying!')
     }
+  }
 
-      render(){
-        return(
+  handleChange = (e) => {
+    this.setState({[e.target.name]: e.target.value});
+  }
+
+  render(){
+    if(this.props.loggedIn === false){
+      return(
+        <div>
+          <ul>
+            <li><Link to='/register'>Register</Link></li>
+            <li><Link to='/'>Skip Login</Link></li>
+          </ul>
+
           <div>
-            <ul>
-              <li><Link to='/register'>Register</Link></li>
-              <li><Link to='/'>Skip Login</Link></li>
-            </ul>
+            <form onSubmit={this.handleSubmit}>
+              <label>
+                Username:
+                <input name='username' placeholder='Username' onChange={this.handleChange} />
+              </label>
+              <label>
+                Password:
+              </label>
+              <input name='password' type='password' placeholder='Password' onChange={this.handleChange} />
+            
+              <input type='submit' value='Login' />
+            </form>
+          </div>
 
-            <div>
-              <form onSubmit={this.handleSubmit}>
-                <label>
-                  Username:
-                  <input name='username' placeholder='Username' onChange={this.handleChange} />
-                </label>
-                <label>
-                  Password:
-                </label>
-                <input name='password' type='password' placeholder='Password' onChange={this.handleChange} />
-              
-                <input type='submit' value='Login' />
-              </form>
-            </div>
-
-          </div> 
-        )
-      }
+        </div> 
+      )
+    } else {
+      return <Redirect to={'/categories'} />
+    }
+  }
 }     
 
 
