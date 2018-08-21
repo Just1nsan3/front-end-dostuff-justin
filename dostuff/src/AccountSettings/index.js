@@ -1,7 +1,9 @@
 import React, {Component} from 'react';
 
+// Account settings page
 
-class AccountContainer extends Component{
+
+class AccountSettings extends Component{
   constructor(){
     super();
     this.state = {
@@ -46,3 +48,5 @@ class AccountContainer extends Component{
 
 
 }
+
+export default AccountSettings;

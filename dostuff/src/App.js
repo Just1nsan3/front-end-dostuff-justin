@@ -5,6 +5,7 @@ import Header from './Header';
 import Login from './Login';
 import EventContainer from './EventContainer';
 import {Route, Switch} from 'react-router-dom';
+import Categories from './Categories';
 
 
 const My404 = () => {
@@ -20,7 +21,7 @@ const App = () => {
     <main>
       <Header />
       <Switch>
-        <Route exact path="/" component={Login} />
+        <Route exact path="/" component={Categories} />
         <Route exact path="/events" component={EventContainer}/>
         <Route component={My404}/>
       </Switch>
