@@ -4,7 +4,7 @@ const Events = (props) => {
 
   return (
     <div>
-      <h4>{props.info.category}</h4>
+      <a target='_blank' href={props.eventInfo.url}><h4>{props.eventInfo.name}</h4></a>
     </div>
   )
 

@@ -8,12 +8,10 @@ import React, {Component} from 'react';
 // class Categories extends Component {}
 
 const Categories = (props) => {
-  console.log(props, " props in Home")
 
   const tempCat = ['other', 'food-and-drink', 'nightlife']
 
     const categoryList = tempCat.map((category, i) => {
-      console.log(category, "this is a category")
 
       // Click on categories to see events? <Link to='/'> CategoryLinkContainer 
       return (

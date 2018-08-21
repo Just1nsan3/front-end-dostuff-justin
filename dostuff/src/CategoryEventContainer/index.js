@@ -2,22 +2,22 @@ import React, {Component} from 'react';
 import Events from '../Events';
 
 class CategoryEventContainer extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
-      categories: ['other', 'music', 'charities'],
-      userEvents: [{category: 'music'}, {category: 'other'}, {category: 'other'}],
-      activeCategory: 'charities',
-      categoryEvents: []
+      categories: this.props.categories,
+      allEvents: this.props.allEvents,
+      activeCategory: this.props.activeCategory,
+      activeCategoryEvents: []
     }
   }
 
-  componentDidMount(){
-    //Loads the events that match the active category when page initially loads
-    const categoryEvents = this.state.userEvents.filter(event => event.category === this.state.activeCategory )
+  componentDidMount() {
+    // Loads the events that match the active category when page initially loads
+    const activeCategoryEvents = this.state.allEvents.filter(event => event.category === this.state.activeCategory )
 
     this.setState({
-      categoryEvents: categoryEvents
+      activeCategoryEvents: activeCategoryEvents
     })
   }
 
@@ -25,23 +25,17 @@ class CategoryEventContainer extends Component {
   placeholderMethod = () => {
   }
 
-  onChange = async (e) => {
-    const categoryEvents = this.state.userEvents.filter(event => event.category === e.target.value)
+  onChange = (e) => {
+    const activeCategoryEvents = this.state.allEvents.filter(event => event.category === e.target.value)
     const newCategory = e.target.value
-
-    const response = await fetch('http://localhost:8000/api/events');
-
-    const responseJSON = await response.json()
-    const newJSON = await JSON.parse(responseJSON.data.events)
-    console.log(newJSON)
 
     this.setState({
       activeCategory: newCategory,
-      categoryEvents: categoryEvents
+      activeCategoryEvents: activeCategoryEvents
     })
   }
 
-  render(){
+  render() {
     return (
       <div>
         <h3>Events Page</h3>
@@ -52,8 +46,8 @@ class CategoryEventContainer extends Component {
             })}
           </select>
         </form>
-        {this.state.categoryEvents.map((event, i) => {
-          return <Events info={event}/>
+        {this.state.activeCategoryEvents.map((event, i) => {
+          return <Events eventInfo={event}/>
         })}
 
       </div>
