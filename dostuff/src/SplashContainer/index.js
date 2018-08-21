@@ -77,10 +77,7 @@ class SplashContainer extends Component {
                   Password:
                 </label>
                 <input name='password' type='password' placeholder='Password' onChange={this.handleChange} />
-
-                    
-                  
-                
+              
                 <input type='submit' value='Login' />
               </form>
             </div>

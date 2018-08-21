@@ -23,7 +23,7 @@ class Register extends Component {
 			}
 		});
 
-			const parsedResponse = await loginResponse.json();
+			const parsedResponse = await registerResponse.json();
 
 			if(parsedResponse.data === 'login successful') {
 				this.props.hideLoginRegister();
