@@ -35,7 +35,7 @@ class Register extends Component {
 
 	} catch (err) {
 		
-		console.log(err, 'ERROR HERE BITCH')
+		console.log(err, 'ERROR HERE')
 		}
 	}
 
