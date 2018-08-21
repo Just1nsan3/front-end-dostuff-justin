@@ -4,7 +4,7 @@ import './App.css';
 import Header from './Header';
 import CategoryEventContainer from './CategoryEventContainer'
 import EventContainer from './EventContainer';
-import {Route, Switch} from 'react-router-dom';
+import { withRouter, Route, Switch} from 'react-router-dom';
 import Categories from './Categories';
 
 
@@ -25,7 +25,7 @@ class App extends Component {
       allEvents: [],
       activePage: '',
       userEvents: [],
-      clickedCategory: ''
+      activeCategory: 'other'
     }
   }
 
@@ -33,17 +33,18 @@ class App extends Component {
   placeholderMethod = () => {
   }
 
+  //make initial call to load data from server
   componentDidMount() {
-    this.updateData().then(data => {
+    this.addInitialData().then(data => {
       this.setState({
         categories: data.categories,
-        events: data.events
+        allEvents: data.events
       })
     })
   }
 
   //makes original fetch call to API to get updated data
-  updateData = async () => {
+  addInitialData = async () => {
     try {
       const response = await fetch('http://localhost:8000/api/events');
 
@@ -66,14 +67,19 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state.categories)
     return (
       <main>
         <Header />
         <Switch>
           <Route exact path="/events" component={EventContainer} />
-          <Route exact path='/categoryevent' component={CategoryEventContainer} />
           <Route exact path="/" component={Categories} />
+
+          <Route 
+                exact 
+                path='/categoryevent'
+                render={() => <CategoryEventContainer allEvents={this.state.allEvents} categories={this.state.categories}activeCategory={this.state.activeCategory} />}
+          />
+
           <Route component={My404}/>
         </Switch>
       </main>
@@ -81,4 +87,9 @@ class App extends Component {
   }
 }
 
-export default App;
+// allEvents={this.state.allEvents} 
+//                     categories={this.state.categories}
+//                     activeCategory={this.state.activeCategory}
+
+
+export default withRouter(App);
