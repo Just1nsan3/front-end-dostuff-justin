@@ -2,7 +2,11 @@ import React from 'react';
 
 const Events = (props) => {
 
-  return <h4>{props.info.category}</h4>
+  return (
+    <div>
+      <h4>{props.info.category}</h4>
+    </div>
+  )
 
 }
 

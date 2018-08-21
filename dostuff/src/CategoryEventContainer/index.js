@@ -7,7 +7,7 @@ class CategoryEventContainer extends Component {
     this.state = {
       categories: ['other', 'music', 'charities'],
       userEvents: [{category: 'music'}, {category: 'other'}, {category: 'other'}],
-      activeCategory: 'music',
+      activeCategory: 'charities',
       categoryEvents: []
     }
   }
@@ -25,11 +25,18 @@ class CategoryEventContainer extends Component {
   placeholderMethod = () => {
   }
 
-  onChange = (e) => {
+  onChange = async (e) => {
     const categoryEvents = this.state.userEvents.filter(event => event.category === e.target.value)
+    const newCategory = e.target.value
+
+    const response = await fetch('http://localhost:8000/api/events');
+
+    const responseJSON = await response.json()
+    const newJSON = await JSON.parse(responseJSON.data.events)
+    console.log(newJSON)
 
     this.setState({
-      activeCategory: e.target.value,
+      activeCategory: newCategory,
       categoryEvents: categoryEvents
     })
   }
@@ -39,9 +46,9 @@ class CategoryEventContainer extends Component {
       <div>
         <h3>Events Page</h3>
         <form>
-          <select type='text' placeholder='Event Categories' name='category' onChange={this.onChange}>
+          <select value={this.state.activeCategory} type='text' placeholder='Event Categories' name='category' onChange={this.onChange}>
             {this.state.categories.map((category, i) => {
-              return (this.state.activeCategory === category ? <option selected value={category}>{category}</option> : <option value={category}>{category}</option>)
+              return <option key={i} value={category}>{category}</option>
             })}
           </select>
         </form>
