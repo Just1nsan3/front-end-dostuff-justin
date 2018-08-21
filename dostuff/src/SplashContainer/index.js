@@ -61,7 +61,7 @@ class SplashContainer extends Component {
 
       render(){
         return(
-          <div>
+          <div class='test'>
             <ul>
               <li><Link to='/register'>Register</Link></li>
               <li><Link to='/'>Skip Login</Link></li>

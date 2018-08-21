@@ -15,14 +15,24 @@ class Menu extends Component {
 
   render(){
     return(
-      <div>
-        <ul>
-          <li><Link to='/'>Home</Link></li>
-          <li><Link to='/yourEvents'>Your Events</Link></li>
-          <li><Link to='/categories'>Your Interests</Link></li>
-          <li><Link to='/categoryevent'>Category Events</Link></li>
-          <li><Link to='/'>Logout</Link></li>
-        </ul>
+      <div id='hamburger' class='menu'>
+        <label for="toggle-1" class="toggle-menu">
+          <ul>
+            <li></li>
+            <li></li> 
+            <li></li>
+          </ul>
+        </label>
+        <input type="checkbox" id="toggle-1" />
+          <nav>
+            <ul>
+              <li className='menuToggle'><Link to='/'>Home</Link></li>
+              <li className='menuToggle'><Link to='/yourEvents'>Your Events</Link></li>
+              <li className='menuToggle'><Link to='/categories'>Your Interests</Link></li>
+              <li className='menuToggle'><Link to='/categoryevent'>Category Events</Link></li>
+              <li className='menuToggle'><Link to='/'>Logout</Link></li>
+            </ul>
+          </nav>
       </div>
     )
   }
