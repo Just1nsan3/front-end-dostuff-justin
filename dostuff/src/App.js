@@ -3,7 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import Header from './Header';
 import CategoryEventContainer from './CategoryEventContainer'
-import YourEventsContainer from './YourEventsContainer';
+//import YourEventsContainer from './YourEventsContainer';
 import { withRouter, Route, Switch, Redirect} from 'react-router-dom';
 import Categories from './Categories';
 import SplashContainer from './SplashContainer';
@@ -123,7 +123,7 @@ class App extends Component {
       <main>
         <Header />
         <Switch>
-          <Route exact path="/YourEvents" component={YourEventsContainer} />
+          
           <Route exact path='/' render={() => <SplashContainer login={this.login} loggedIn={this.state.loggedIn}/> } />
           <Route exact path='/categoryevent' render={() => <CategoryEventContainer allEvents={this.state.allEvents} categories={this.state.categories} activeCategory={this.state.activeCategory} />}
           />
@@ -140,6 +140,9 @@ class App extends Component {
   }
 }
 
+
+
+//<Route exact path="/YourEvents" component={YourEventsContainer} />
 // allEvents={this.state.allEvents} 
 //                     categories={this.state.categories}
 //                     activeCategory={this.state.activeCategory}
