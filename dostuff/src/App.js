@@ -7,6 +7,7 @@ import EventContainer from './EventContainer';
 import {Route, Switch} from 'react-router-dom';
 import Categories from './Categories';
 import SplashContainer from './SplashContainer';
+import Register from './Register'
 
 
 const My404 = () => {
@@ -28,6 +29,8 @@ const App = () => {
         <Route exact path='/CategoryEvent' component={CategoryEventContainer} />
         <Route exact path="/Categories" component={Categories} />
         <Route exact path="/" component={SplashContainer} />
+        <Route exact path="/Register" component={Register} />
+
         <Route component={My404}/>
       </Switch>
     </main>
