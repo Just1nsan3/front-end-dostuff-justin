@@ -48,6 +48,7 @@ class SplashContainer extends Component {
           }
         })
 
+
         const loginResponseJSON = await loginResponse
       } catch (err) {
         console.log(err, 'stop lying!')

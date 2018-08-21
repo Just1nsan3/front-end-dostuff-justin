@@ -26,7 +26,7 @@ const App = () => {
       <Header />
       <Switch>
         <Route exact path="/events" component={EventContainer} />
-        <Route exact path='/categoryevent' component={CategoryEventContainer} />
+        <Route exact path='/CategoryEvent' component={CategoryEventContainer} />
         <Route exact path="/Categories" component={Categories} />
         <Route exact path="/" component={SplashContainer} />
         <Route exact path="/Register" component={Register} />
