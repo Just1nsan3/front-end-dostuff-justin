@@ -1,22 +1,18 @@
-import React, {Component} from 'react';
-
-
-// HOME PAGE
-
-
-
-// class Categories extends Component {}
+import React from 'react';
 
 const Categories = (props) => {
+  console.log(props, " props in Home")
 
-  const tempCat = ['other', 'food-and-drink', 'nightlife']
 
-    const categoryList = tempCat.map((category, i) => {
+    const categoryList = props.categories.map((category, i) => {
+      console.log(categories, "this is a category")
 
-      // Click on categories to see events? <Link to='/'> CategoryLinkContainer 
+      // Click on categories to see events?
       return (
         <li key={category._id}>
-          <span>{category}</span>
+          <span>{category.type}</span>
+          <button onClick={props.addCategory}>Add Interest</button>
+          <button onClick={props.deleteCategory}>Remove</button>
         </li>
         )
     });
@@ -28,9 +24,6 @@ const Categories = (props) => {
     </ul>
   )  
 }
-
-// <button onClick={props.addCategory}>Add Interest</button>
-// <button onClick={props.deleteCategory}>Remove</button>
 
 // Where define categories? fetch call?
 // Need declare category?

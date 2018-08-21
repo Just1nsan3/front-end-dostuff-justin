@@ -34,11 +34,9 @@ class Register extends Component {
 		}
 	} catch (err) {
 		
-<<<<<<< HEAD
+
 		console.log(err, 'ERROR HERE')
-=======
-		console.log(err, 'ERROR, SON')
->>>>>>> 0a4627ba39e078a5c3efa4540ce9104960a8fddd
+
 		}
 	}
 

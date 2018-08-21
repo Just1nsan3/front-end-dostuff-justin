@@ -51,6 +51,7 @@ class CategoryEventContainer extends Component {
         })}
 
       </div>
+            
     )
   }
 }
