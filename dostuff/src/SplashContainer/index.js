@@ -12,16 +12,16 @@ class SplashContainer extends Component {
       // skipLogin: null
     }
 
-    getCategories = async () => {
-      try{
-        const categories = await fetch('', {
-          credentials: 'include',
-          method: 'GET'
-        });
-        // const parsedCategories = categories.json(); 
-      } catch (err) {
-        console.log(err, 'error in getCategories in SplashContainer')
-      }
+    // getCategories = async () => {
+    //   try{
+    //     const categories = await fetch('', {
+    //       credentials: 'include',
+    //       method: 'GET'
+    //     });
+    //     // const parsedCategories = categories.json(); 
+    //   } catch (err) {
+    //     console.log(err, 'error in getCategories in SplashContainer')
+    //   }
 
     handleSubmit = async (e) => {
       try{

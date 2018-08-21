@@ -5,6 +5,7 @@ import Header from './Header';
 import CategoryEventContainer from './CategoryEventContainer'
 import EventContainer from './EventContainer';
 import {Route, Switch} from 'react-router-dom';
+import Categories from './Categories';
 
 
 const My404 = () => {
@@ -24,6 +25,7 @@ const App = () => {
       <Switch>
         <Route exact path="/events" component={EventContainer} />
         <Route exact path='/categoryevent' component={CategoryEventContainer} />
+        <Route exact path="/" component={Categories} />
         <Route component={My404}/>
       </Switch>
     </main>
