@@ -1,28 +1,28 @@
 import React, {Component} from 'react';
-import Events from './Events';
+import Events from '../Events';
 
 class CategoryEventContainer extends Component {
   constructor(props){
     super(props);
     this.state = {
-      categories: this.props.categories,
-      userEvents: this.props.userEvents,
-      activeCategory: this.props.category,
+      categories: ['other', 'music', 'charities'],
+      userEvents: [{category: 'music'}, {category: 'other'}, {category: 'other'}],
+      activeCategory: 'music',
       categoryEvents: []
     }
   }
 
   componentDidMount(){
     //Loads the events that match the active category when page initially loads
-    categoryEvents = this.state.userEvents.filter(event => event.category === this.state.activeCategory )
+    const categoryEvents = this.state.userEvents.filter(event => event.category === this.state.activeCategory )
 
     this.setState({
       categoryEvents: categoryEvents
     })
   }
 
-  //purpsoe is to change color of next active method to green
-  placeholderMethod = () {
+  //purpose is to change color of next active method to green
+  placeholderMethod = () => {
   }
 
   onChange = (e) => {
@@ -38,17 +38,15 @@ class CategoryEventContainer extends Component {
     return (
       <div>
         <h3>Events Page</h3>
-        <form >
+        <form>
           <select type='text' placeholder='Event Categories' name='category' onChange={this.onChange}>
             {this.state.categories.map((category, i) => {
-              return (
-                <option {this.state.activeCategory === category ? selected : null} value={category}>{category}</option>
-              )
+              return (this.state.activeCategory === category ? <option selected value={category}>{category}</option> : <option value={category}>{category}</option>)
             })}
           </select>
         </form>
         {this.state.categoryEvents.map((event, i) => {
-          return <
+          return <Events info={event}/>
         })}
 
       </div>
