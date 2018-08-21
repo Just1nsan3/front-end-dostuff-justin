@@ -13,7 +13,7 @@ class AccountSettings extends Component{
 
   handleSubmit = async (e) => {
   e.preventDefault();
-  const loginResponse = await fetch('', {
+  const loginResponse = await fetch('http://localhost:8000/api/login', {
     method: 'POST',
     credentials: 'include',
     body: JSON.stringify(this.state),
