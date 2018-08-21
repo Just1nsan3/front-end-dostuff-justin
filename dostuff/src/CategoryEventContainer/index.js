@@ -35,6 +35,8 @@ class CategoryEventContainer extends Component {
     })
   }
 
+ 
+
   render() {
     return (
       <div>

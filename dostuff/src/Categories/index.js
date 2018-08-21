@@ -1,28 +1,29 @@
 import React from 'react';
 
-const Categories = (props) => {
-  console.log(props, " props in Home")
+
+class Categories extends Component {
+
+  clickHandle = (e) => {
+    e.preventDefault();
+    console.log(e.target)
+    console.log(typeof e.target)
+    // this.props.changeActiveCategory(e.target.value)
+  }
 
 
-    const categoryList = props.categories.map((category, i) => {
-      console.log(categories, "this is a category")
-
-      // Click on categories to see events?
-      return (
-        <li key={category._id}>
-          <span>{category.type}</span>
-          <button onClick={props.addCategory}>Add Interest</button>
-          <button onClick={props.deleteCategory}>Remove</button>
-        </li>
-        )
-    });
-
-
-  return (
-    <ul>
-      {categoryList}
-    </ul>
-  )  
+  render() {
+    return (
+      <div>
+        {this.props.categories.map((category, i) => {
+          return (
+            <div onClick={this.clickHandle} value={category} name={category} data-cat={category} className='categoryList' key={i}>
+              <span value={category}>{category}</span>
+            </div>
+          )
+        })}
+      </div>
+    )
+  } 
 }
 
 // Where define categories? fetch call?
