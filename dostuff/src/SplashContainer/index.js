@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import Login from './Login';
-
+// import Login from './Login';
+import {Route, Switch} from 'react-router-dom';
+import {Link} from 'react-router-dom';
+import PasswordMask from 'react-password-mask';
 
 
 class SplashContainer extends Component {
@@ -11,6 +13,7 @@ class SplashContainer extends Component {
       password: '',
       // skipLogin: null
     }
+  }
 
     // getCategories = async () => {
     //   try{
@@ -23,10 +26,20 @@ class SplashContainer extends Component {
     //     console.log(err, 'error in getCategories in SplashContainer')
     //   }
 
+    // <input name='password' placeholder='Password' onChange={this.handleChange} />
+
+    // <PasswordMask
+    //                   name="password"
+    //                   placeholder="Enter password"
+    //                   useVendorStyles={false}
+    //                   value={this.state.password}
+    //                   onChange={this.handleChange.bind(this)}
+    //                 />
+
     handleSubmit = async (e) => {
       try{
         e.preventDefault();
-        const loginResponse = await fetch('', {
+        const loginResponse = await fetch('http://localhost:8000/api/login', {
           method: 'POST',
           credentials: 'include',
           body: JSON.stringify(this.state),
@@ -35,9 +48,10 @@ class SplashContainer extends Component {
           }
         })
 
-        cosnt loginResponseJSON = await login
+
+        const loginResponseJSON = await loginResponse
       } catch (err) {
-        console.log(err, 'error in handleSubmit in SplashContainer')
+        console.log(err, 'stop lying!')
       }
     }
 
@@ -51,7 +65,6 @@ class SplashContainer extends Component {
             <ul>
               <li><Link to='/register'>Register</Link></li>
               <li><Link to='/'>Skip Login</Link></li>
-              <li>parsedCategories</li>
             </ul>
 
             <div>
@@ -62,17 +75,17 @@ class SplashContainer extends Component {
                 </label>
                 <label>
                   Password:
-                  <input name='password' placeholder='Password' onChange={this.handleChange} />
                 </label>
+                <input name='password' type='password' placeholder='Password' onChange={this.handleChange} />
+              
+                <input type='submit' value='Login' />
               </form>
             </div>
 
           </div> 
         )
       }
-    }
-}
-
+}     
 
 
 export default SplashContainer;

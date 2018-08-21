@@ -1,11 +1,12 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
+// import SplashContainer from './SplashContainer';
 
 class Menu extends Component {
   constructor(){
     super();
     this.state = {
-      home: null,
+      home: true,
       yourEvents: [],
       settings: null,
       logout: false

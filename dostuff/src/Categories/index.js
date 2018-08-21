@@ -1,6 +1,10 @@
 import React, {Component} from 'react';
 
 
+// HOME PAGE
+
+
+
 // class Categories extends Component {}
 
 const Categories = (props) => {
