@@ -26,7 +26,7 @@ class SplashContainer extends Component {
     handleSubmit = async (e) => {
       try{
         e.preventDefault();
-        const loginResponse = await fetch('', {
+        const loginResponse = await fetch('http://localhost:8000/api/login', {
           method: 'POST',
           credentials: 'include',
           body: JSON.stringify(this.state),
@@ -35,7 +35,7 @@ class SplashContainer extends Component {
           }
         })
 
-        cosnt loginResponseJSON = await login
+        const loginResponseJSON = await login
       } catch (err) {
         console.log(err, 'error in handleSubmit in SplashContainer')
       }
@@ -51,7 +51,6 @@ class SplashContainer extends Component {
             <ul>
               <li><Link to='/register'>Register</Link></li>
               <li><Link to='/'>Skip Login</Link></li>
-              <li>parsedCategories</li>
             </ul>
 
             <div>
