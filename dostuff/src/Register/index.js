@@ -2,75 +2,91 @@ import React, { Component } from 'react';
 
 class Register extends Component {
 	constructor(){
-		super()
+		super();
 		this.state = {
 			username: "",
 			password: "",
-			confirm: ""
+			confirm: "",
+			location: ""
 		}
 	}
 
 
-		handleSubmit = async (e) => {
+	handleSubmit = async (e) => {
+		const theBody=JSON.stringify(this.state)
+		console.log(theBody, "here is the body in handleSubmit in Register")
 		e.preventDefault();
+		try {
+			const registerResponse = await fetch('http://localhost:8000/api/register', {
+				method: 'POST',
+				credentials: 'include',
+				body: theBody,
+				header: {
+					'Content-Type': 'application/json'
+				}
+			})
+	
 
-		const registerResponse = await fetch('http://localhost:8000/api/register', {
-			method: 'POST',
-			credentials: 'include',
-			body: JSON.stringify(this.state),
-			header: {
-				'Content-Type': 'application/json'
-			}
-		});
-
-			const parsedResponse = await loginResponse.json();
-
-			if(parsedResponse.data === 'login successful') {
-				this.props.hideLoginRegister();
-
-			}
+		const registerResponseJSON = await registerResponse.json();
+		console.log(registerResponseJSON, 'registerResponseJSON HERE')
+		if(registerResponse.status === 'status') {
+			this.props.hideLoginRegister();
 		}
 
-
-
-		handleChange = (e) => {
-			this.setState({[e.target.name]: e.target.value});
+	} catch (err) {
+		
+		console.log(err, 'ERROR HERE BITCH')
 		}
+	}
 
 
-			render(){
-			return(
-				<div>
+
+
+	handleChange = (e) => {
+		this.setState({[e.target.name]: e.target.value});
+	}
+
+	render(){
+		return(
+			<div>
 
 				<form className="register" onSubmit={this.handleSubmit}>
 					<label>
 
 						Username:
 
-						<input type='text' name='username' onChange={this.handleChange} />
+						<input type='text' name='username' onChange={this.handleChange} value={this.state.username}/>
 					</label>
 
 					<label>
 
 						Password:
 
-						<input type='password' name='password' onChange={this.handleChange} />
+						<input type='password' name='password' onChange={this.handleChange} value={this.state.password}/>
 					</label>
 
 					<label>
 
 						Confirm:
 
-						<input type='password' name='password' onChange={this.handleChange} />
+						<input type='password' name='confirm' onChange={this.handleChange} value={this.state.confirm}/>
 
 					</label>
 
+					<label>
+
+						Location:
+
+						<input type='text' name='location' onChange={this.handleChange} value={this.state.location}/>
+
+					</label>
 					
-					<input type='submit' value='register' />
+					<input type='submit' />
 				</form>
 			</div>
-				)
-		}
+		)
+	}
+
 }
 
 
