@@ -26,11 +26,11 @@ class Register extends Component {
 				}
 			})
 	
-
 		const registerResponseJSON = await registerResponse.json();
+
 		console.log(registerResponseJSON, 'registerResponseJSON HERE')
-		if(registerResponse.status === 'status') {
-			this.props.hideLoginRegister();
+		if(registerResponse.status === 200) {
+			this.props.history.push('/categories')
 		}
 	} catch (err) {
 		

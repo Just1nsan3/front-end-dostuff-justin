@@ -49,7 +49,14 @@ class SplashContainer extends Component {
         })
 
 
-        const loginResponseJSON = await loginResponse
+        const loginResponseJSON = await loginResponse.json()
+
+        console.log(loginResponseJSON)
+
+        if(loginResponseJSON.status === 200) {
+          this.props.history.push('/categories')
+        }
+
       } catch (err) {
         console.log(err, 'stop lying!')
       }

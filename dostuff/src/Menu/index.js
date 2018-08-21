@@ -21,7 +21,7 @@ class Menu extends Component {
           <li><Link to='/yourEvents'>Your Events</Link></li>
           <li><Link to='/categories'>Your Interests</Link></li>
           <li><Link to='/categoryevent'>Category Events</Link></li>
-          <li><Link to='/'>Logout</Link></li>
+          <li><Link to='/logout'>Logout</Link></li>
         </ul>
       </div>
     )
