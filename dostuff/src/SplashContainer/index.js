@@ -53,7 +53,7 @@ class SplashContainer extends Component {
         <div>
           <ul>
             <li><Link to='/register'>Register</Link></li>
-            <li><Link to='/'>Skip Login</Link></li>
+            <li><Link to='/categories'>Skip Login</Link></li>
           </ul>
 
           <div>

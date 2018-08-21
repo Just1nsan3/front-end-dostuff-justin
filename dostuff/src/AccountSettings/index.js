@@ -39,7 +39,14 @@ class AccountSettings extends Component{
               <input name='location' placeholder='Location' value={this.state.location} onChange={this.handleChange} />
             </label>
 
+            {this.props.categories.map((category, i) => {
+              return (
+                <div id={category} onClick={this.onClick} className='settingsCategory'>
+                  <span>{category}</span>
+                </div>
+              )
 
+            })}
             <button onClick={this.handleSubmit}>Save Settings</button>
           </form>    
         </div>

@@ -15,13 +15,8 @@ class Menu extends Component {
 
   render(){
     return(
-      <div id='hamburger' class='menu'>
-        <label for="toggle-1" class="toggle-menu">
-          <ul>
-            <li></li>
-            <li></li> 
-            <li></li>
-          </ul>
+      <div id='hamburger' className='menu'>
+        <label htmlFor="toggle-1" className="toggle-menu">
         </label>
         <input type="checkbox" id="toggle-1" />
           <nav>

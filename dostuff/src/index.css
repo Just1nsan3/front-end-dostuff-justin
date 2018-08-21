@@ -44,6 +44,30 @@ nav ul li a i{color:#fde428; padding-right:13px;}
 .content{width:90%;}
 }
 
+.categoryList {
+	height: 5vh;
+	width: 50vw;
+	margin: 10px;
+	text-align: center;
+	background-color: rgba(122, 255, 122, .5);
+}
+
+.categoryList:hover {
+	background-color: rgba(255, 255, 122, .5);
+}
+
+
+.settingsCategory {
+	height: 15vh;
+	width: 25vw;
+	text-align: center;
+	margin: 10px;
+	background-color: rgba(122, 255, 122, .5);
+	background-color: rgba(255, 255, 122, .5);
+
+}
+
+
 @media only screen and (max-width: 568px) {
 h1{padding:25px 0px;}
 h1 span{display:block;}
