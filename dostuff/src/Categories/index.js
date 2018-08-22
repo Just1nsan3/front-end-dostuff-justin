@@ -13,7 +13,7 @@ class Categories extends Component {
 
   render() {
     return (
-      <div>
+      <div id="categories">
         {this.props.categories.map((category, i) => {
           return (
             <div onClick={this.clickHandle} id={category} className='categoryList' key={i}>

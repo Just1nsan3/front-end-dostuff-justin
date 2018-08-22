@@ -1,12 +1,34 @@
 body {
 	text-align: center;
+	background-color: #FFD166;
 }
 
-/*.register {
-	display: flex;
-	
+li, ul {
+	list-style: none;
+	padding-left: 0;
 }
-*/
+
+.register {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.login {
+	display: flex;
+	flex-direction: column;
+}
+
+span, header, h3, ul, li, .login, .register, button, input {
+	font-family: 'Roboto Slab';
+}
+
+
+.input {
+	max-width: 200px;
+}
+
+
 
 .categoryList {
 	height: 5vh;
