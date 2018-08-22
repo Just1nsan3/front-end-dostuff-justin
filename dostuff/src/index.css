@@ -142,11 +142,13 @@ button {
 a {
 	text-decoration: none;
 	color: #FFD166;
+	font-family: 'Roboto Slab';
 }
 
 a:hover {
 	text-decoration: none;
-	color: blue;
+	color: #118AB2; 
+
 }
 
 
