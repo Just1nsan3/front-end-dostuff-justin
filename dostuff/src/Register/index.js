@@ -48,41 +48,43 @@ class Register extends Component {
 
 	render(){
 		return(
-			<div className="register">
+			<div className='registerContainer'>
+				<div className="register">
 
-				<form className="registerForm" onSubmit={this.handleSubmit}>
-					<label>
+					<form className="registerForm" onSubmit={this.handleSubmit}>
+						<label>
 
-						Username:
+							Username:<br/>
 
-						<input type='text' name='username' onChange={this.handleChange} value={this.state.username}/>
-					</label>
+							<input type='text' name='username' onChange={this.handleChange} value={this.state.username}/>
+						</label>
 
-					<label>
+						<label>
 
-						Password:
+							Password:<br/>
 
-						<input type='password' name='password' onChange={this.handleChange} value={this.state.password}/>
-					</label>
+							<input type='password' name='password' onChange={this.handleChange} value={this.state.password}/>
+						</label>
 
-					<label>
+						<label>
 
-						Confirm:
+							Confirm:<br/>
 
-						<input type='password' name='confirm' onChange={this.handleChange} value={this.state.confirm}/>
+							<input type='password' name='confirm' onChange={this.handleChange} value={this.state.confirm}/>
 
-					</label>
+						</label>
 
-					<label>
+						<label>
 
-						Location:
+							Location:<br/>
 
-						<input type='text' name='location' onChange={this.handleChange} value={this.state.location}/>
+							<input type='text' name='location' onChange={this.handleChange} value={this.state.location}/>
 
-					</label>
-					
-					<button>Submit</button>
-				</form>
+						</label>
+						
+						<button>Submit</button>
+					</form>
+				</div>
 			</div>
 		)
 	}
