@@ -42,7 +42,7 @@ nav ul li a i{color:#fde428; padding-right:13px;}
 
 @media only screen and (max-width: 980px) {
 .content{width:90%;}
-}
+}*/
 
 .categoryList {
 	height: 5vh;
@@ -70,7 +70,7 @@ nav ul li a i{color:#fde428; padding-right:13px;}
 }
 
 
-@media only screen and (max-width: 568px) {
+/*@media only screen and (max-width: 568px) {
 h1{padding:25px 0px;}
 h1 span{display:block;}
 }
@@ -91,8 +91,12 @@ h1 {padding: 20px 0px;}
 }
 
 
-
-	
+.register {
+	display: flex;
+	justify-content: column;
+	text-align: center;
+}
+	*/
 
 
 
@@ -106,4 +110,3 @@ h1 {padding: 20px 0px;}
 	background-image: url('https://i.imgur.com/Hc1jBpq.jpg');
 }
 
-*/
