@@ -64,7 +64,6 @@ nav ul li a i{color:#fde428; padding-right:13px;}
 	margin: 10px;
 	background-color: rgba(122, 255, 122, .5);
 	background-color: rgba(255, 255, 122, .5);
-
 }
 
 
@@ -89,7 +88,11 @@ h1 {padding: 20px 0px;}
 }
 
 
-
+.register {
+	display: flex;
+	justify-content: column;
+	text-align: center;
+}
 	
 
 
