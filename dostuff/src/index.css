@@ -62,13 +62,17 @@ nav ul li a i{color:#fde428; padding-right:13px;}
 	width: 25vw;
 	text-align: center;
 	margin: 10px;
-	background-color: rgba(122, 255, 122, .5);
+	background-color: rgba(22, 155, 22, .5);
+	
 }
 
 .settingsCategory:hover {
 	background-color: rgba(255, 255, 55, .5);
 }
 
+.clicked {
+	background-color: rgba(122, 255, 122, .5);
+}
 
 /*@media only screen and (max-width: 568px) {
 h1{padding:25px 0px;}

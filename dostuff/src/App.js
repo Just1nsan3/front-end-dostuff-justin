@@ -147,6 +147,7 @@ class App extends Component {
 
   render() {
     console.log(this.state.userCategories)
+    console.log(this.state.loggedIn)
     return (
       <main>
         <Header />
@@ -158,8 +159,8 @@ class App extends Component {
           <Route exact path='/categories' render={() => <Categories categories={this.state.categories} changeActiveCategory={this.changeActiveCategory} />}
           />
           <Route exact path='/register' render={() => <Register register={this.register} /> } />
-          <Route exact path='/logout' render={() => <Logout logout={this.logout} /> } />
-          <Route exact path='/settings' render={() => <AccountSettings userId={this.state.userId} loggedIn={this.state.loggedIn} userLocation={this.state.userLocation} categories={this.state.categories} changeUserCategory={this.changeUserCategory} updateUser={this.updateUser}/> } />
+          <Route exact path='/logout' render={() => <Logout logout={this.logout} loggedIn={this.state.loggedIn} history={this.props.history}/> } />
+          <Route exact path='/settings' render={() => <AccountSettings userId={this.state.userId} loggedIn={this.state.loggedIn} userLocation={this.state.userLocation} userCategories={this.state.userCategories} categories={this.state.categories} changeUserCategory={this.changeUserCategory} updateUser={this.updateUser}/> } />
 
           <Route component={My404}/>
         </Switch>

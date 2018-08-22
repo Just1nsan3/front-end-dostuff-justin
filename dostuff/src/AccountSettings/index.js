@@ -7,7 +7,8 @@ class AccountSettings extends Component{
   constructor(props){
     super(props);
     this.state = {
-      categories: this.props.categories,
+      categories: this.props.userCategories,
+      allCategories: this.props.categories,
       location: this.props.userLocation,
       userid: this.props.userId
     }
@@ -39,7 +40,6 @@ class AccountSettings extends Component{
   // function for adding and un-adding categories to profile to narrow interests
   onClick = (e) => {
     e.preventDefault();
-    console.log(e.currentTarget.id)
     this.props.changeUserCategory(e.currentTarget.id)
   }
 
@@ -54,7 +54,12 @@ class AccountSettings extends Component{
             </label>
             <div className='settingsCategoryContainer'>
               {this.props.categories.map((category, i) => {
-                return (
+                 return (this.state.categories.indexOf(category) >= 0 ? 
+                  <div id={category} onClick={this.onClick} className='settingsCategory clicked'>
+                    <span>{category}</span>
+                  </div>
+                : 
+                  
                   <div id={category} onClick={this.onClick} className='settingsCategory'>
                     <span>{category}</span>
                   </div>

@@ -26,7 +26,7 @@ class Menu extends Component {
               <li className='menuToggle'><Link to='/settings'>Account Settings</Link></li>
               <li className='menuToggle'><Link to='/categories'>Your Interests</Link></li>
               <li className='menuToggle'><Link to='/categoryevent'>Category Events</Link></li>
-              <li className='menuToggle'><Link to='/'>Logout</Link></li>
+              <li className='menuToggle'><Link to='/logout'>Logout</Link></li>
             </ul>
           </nav>
       </div>
