@@ -10,10 +10,27 @@ header {
 	background-color: ;
 }
 
+.splashContainer {
+	display: flex;
+	justify-content: center;
+
+}
+
+.splash {
+	 background-color: #EF476F;
+	 width: 30vw;
+	 padding: 20px;
+	 border: 7px solid white;
+	box-shadow: 10px 10px 10px rgba(20, 20, 20, .25);
+}
+
 .menuButton button{
 	width: 10vw;
 	height: 5vh;
-	cursor: pointer;
+	cursor: pointer; 
+	background-color: #EF476F;
+	border: 3px solid white;
+	box-shadow: 10px 10px 10px rgba(20, 20, 20, .25);
 }
 
 button {

@@ -55,34 +55,36 @@ class SplashContainer extends Component {
   render(){
     if(this.props.loggedIn === false){
       return(
-        <div>
-          <ul>
-            <li><Link to='/register'>Register</Link></li>
-            <li><Link to='/categories'>Skip Login</Link></li>
-          </ul>
+        <div className='splashContainer'>
+          <div className='splash'>
+            <ul>
+              <li><Link to='/register'>Register</Link></li>
+              <li><Link to='/categories'>Skip Login</Link></li>
+            </ul>
 
-          <div class="login">
-            <form onSubmit={this.handleSubmit}>
-              <label for='usernameinput'>
-                Username:
-              </label>
-              <br />
-              <input id='usernameinput' className='input' name='username' placeholder='Username' onChange={this.handleChange} />
-              <br />
+            <div class="login">
+              <form onSubmit={this.handleSubmit}>
+                <label for='usernameinput'>
+                  Username:
+                </label>
+                <br />
+                <input id='usernameinput' className='input' name='username' placeholder='Username' onChange={this.handleChange} />
+                <br />
+                
+                <label>
+                  Password:
+                </label>
+                <br />
+
+                <input className='input' name='password' type='password' placeholder='Password' onChange={this.handleChange} />
+                <br />
               
-              <label>
-                Password:
-              </label>
-              <br />
+                <button>Submit</button>
+              </form>
+            </div>
 
-              <input className='input' name='password' type='password' placeholder='Password' onChange={this.handleChange} />
-              <br />
-            
-              <button>Submit</button>
-            </form>
-          </div>
-
-        </div> 
+          </div> 
+        </div>
       )
     } else {
       return <Redirect to={'/categories'} />
