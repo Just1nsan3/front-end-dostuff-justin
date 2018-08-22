@@ -147,7 +147,11 @@ a {
 
 a:hover {
 	text-decoration: none;
-	color: #118AB2; 
+	color: #118AB2;
+	text-shadow: -1px 1px 0 #FFD166,
+				  1px 1px 0 #FFD166,
+				 1px -1px 0 #FFD166,
+				-1px -1px 0 #FFD166;
 
 }
 
