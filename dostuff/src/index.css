@@ -11,12 +11,16 @@ header {
 
 
 .categoryList span {
-	background-color: white;
-	padding: 0 4px;
-	border: 5px white;
-	border-radius: 5%
+	background-color: #05C491;
+	border: 1px solid #4C3C1B;
+	padding: 0px 80px 8px 8px;
+	width: 300px;
+	border-radius: 25px;
 }
 
+.categoryList {
+	
+}
 
 .menuText {
 	color: #B4FFDA;
@@ -25,6 +29,7 @@ header {
 
 .menuText:visited {
     text-decoration: none;
+    color: #FFD166;
 }
 
 li, ul {
