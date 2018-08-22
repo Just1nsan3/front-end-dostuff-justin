@@ -1,30 +1,54 @@
-import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
+import React, {Component} from 'react';
 // import SplashContainer from './SplashContainer';
 
 class Menu extends Component {
-  constructor(){
+  constructor() {
     super();
+    
     this.state = {
-      home: true,
-      yourEvents: [],
-      settings: null,
-      logout: false
+      showMenu: false,
+    };
+    
+    this.showMenu = this.showMenu.bind(this);
+    this.closeMenu = this.closeMenu.bind(this);
+  }
+  
+  showMenu(event) {
+    event.preventDefault();
+    
+    this.setState({ showMenu: true }, () => {
+      document.addEventListener('click', this.closeMenu);
+    });
+  }
+  
+  closeMenu(event) {
+    
+    if (!this.dropdownMenu.contains(event.target)) {
+      
+      this.setState({ showMenu: false }, () => {
+        document.removeEventListener('click', this.closeMenu);
+      });  
+      
     }
   }
 
   render(){
     return(
-      <div id='hamburger' class='menu'>
-        <label for="toggle-1" class="toggle-menu">
-          <ul>
-            <li></li>
-            <li></li> 
-            <li></li>
-          </ul>
-        </label>
-        <input type="checkbox" id="toggle-1" />
-          <nav>
+       <div>
+        <button onClick={this.showMenu}>
+          Show menu
+        </button>
+        
+        {
+          this.state.showMenu
+            ? (
+              <div
+                className="menu"
+                ref={(element) => {
+                  this.dropdownMenu = element;
+                }}
+              >
             <ul>
               <li className='menuToggle'><Link to='/'>Home</Link></li>
               <li className='menuToggle'><Link to='/yourEvents'>Your Events</Link></li>
@@ -33,9 +57,14 @@ class Menu extends Component {
               <li className='menuToggle'><Link to='/categoryevent'>Category Events</Link></li>
               <li className='menuToggle'><Link to='/'>Logout</Link></li>
             </ul>
-          </nav>
+          </div>
+            )
+            : (
+              null
+            )
+        }
       </div>
-    )
+    );
   }
 }
 

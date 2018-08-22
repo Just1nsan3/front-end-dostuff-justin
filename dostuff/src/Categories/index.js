@@ -1,13 +1,13 @@
-import React from 'react';
+
+import React, { Component } from 'react';
 
 
 class Categories extends Component {
 
   clickHandle = (e) => {
     e.preventDefault();
-    console.log(e.target)
-    console.log(typeof e.target)
-    // this.props.changeActiveCategory(e.target.value)
+    // console.log(e.currentTarg et.id)
+    this.props.changeActiveCategory(e.currentTarget.id)
   }
 
 
@@ -16,7 +16,7 @@ class Categories extends Component {
       <div>
         {this.props.categories.map((category, i) => {
           return (
-            <div onClick={this.clickHandle} value={category} name={category} data-cat={category} className='categoryList' key={i}>
+            <div onClick={this.clickHandle} id={category} className='categoryList' key={i}>
               <span value={category}>{category}</span>
             </div>
           )
@@ -25,8 +25,5 @@ class Categories extends Component {
     )
   } 
 }
-
-// Where define categories? fetch call?
-// Need declare category?
 
 export default Categories;

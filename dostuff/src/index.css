@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 *{text-decoration:none; 
 	list-style:none; 
 	margin:0px; 
@@ -143,31 +144,34 @@ nav ul li a i{
 
 @media only screen and (max-width: 980px) {
 .content{width:90%;}
+
+.categoryList {
+	height: 5vh;
+	width: 50vw;
+	margin: 10px;
+	text-align: center;
+	background-color: rgba(122, 255, 122, .5);
 }
 
-@media only screen and (max-width: 568px) {
-h1{padding:25px 0px;}
-h1 span{display:block;}
-}
+.categoryList:hover {
+	background-color: rgba(255, 255, 122, .5);
 
-@media only screen and (max-width: 480px) {
-section {max-width: 90%;}
-}
-
-@media only screen and (max-width: 360px) {
-h1{font-size:20px;}
-label{padding:5px 0px;}
-#logo{font-size: 20px;}
-nav{top:47px;}
-}
-
-@media only screen and (max-width: 320px) {
-h1 {padding: 20px 0px;}
 }
 
 
+.settingsCategory {
+	height: 15vh;
+	width: 25vw;
+	text-align: center;
+	margin: 10px;
+	background-color: rgba(122, 255, 122, .5);
+}
 
-	
+.settingsCategory:hover {
+	background-color: rgba(255, 255, 55, .5);
+}
+
+
 
 
 

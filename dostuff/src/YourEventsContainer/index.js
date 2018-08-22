@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Events from './Events';
+import Events from '../Events';
 import {Route, Switch} from 'react-router-dom';
 
 
@@ -14,15 +14,6 @@ class YourEventsContainer extends Component {
   }
 
 
-  componentDidMount(){
-    this.getEvents().then((events) => {
-      this.setState({
-        events: events.data
-      })
-    }).catch((err) => {
-      console.log(err)
-    });
-  }
 
   // I am not sure this is the right call
   addEvent = async (event, e) => {
@@ -36,7 +27,8 @@ class YourEventsContainer extends Component {
         }
       });
 
-      const parsedResponse = await addEvent.json();
+
+      const parsedResponse = await events.json();
       this.setState({events: [...this.state.events, parsedResponse.data]})
     } catch(err){
       console.log(err);
@@ -65,7 +57,7 @@ class YourEventsContainer extends Component {
     return (
       <div>
         <ul>
-          <li>{eventList}</li>
+          <li>{this.state.events}</li>
         </ul>
         <button onClick={this.deleteEvent}>Remove</button>
 
