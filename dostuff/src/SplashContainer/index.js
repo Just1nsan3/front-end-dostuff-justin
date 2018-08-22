@@ -61,16 +61,22 @@ class SplashContainer extends Component {
             <li><Link to='/categories'>Skip Login</Link></li>
           </ul>
 
-          <div>
+          <div class="login">
             <form onSubmit={this.handleSubmit}>
-              <label>
+              <label for='usernameinput'>
                 Username:
-                <input name='username' placeholder='Username' onChange={this.handleChange} />
               </label>
+              <br />
+              <input id='usernameinput' className='input' name='username' placeholder='Username' onChange={this.handleChange} />
+              <br />
+              
               <label>
                 Password:
               </label>
-              <input name='password' type='password' placeholder='Password' onChange={this.handleChange} />
+              <br />
+
+              <input className='input' name='password' type='password' placeholder='Password' onChange={this.handleChange} />
+              <br />
             
               <button>Submit</button>
             </form>
