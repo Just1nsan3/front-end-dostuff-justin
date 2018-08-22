@@ -14,6 +14,7 @@ class Menu extends Component {
     this.closeMenu = this.closeMenu.bind(this);
   }
   
+  //changes the state of the menu
   showMenu(event) {
     event.preventDefault();
     
@@ -22,6 +23,7 @@ class Menu extends Component {
     });
   }
   
+  //changes the state of the menu
   closeMenu(event) {
     
     if (!this.dropdownMenu.contains(event.target)) {

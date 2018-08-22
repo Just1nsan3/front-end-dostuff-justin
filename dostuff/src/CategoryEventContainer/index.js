@@ -12,6 +12,7 @@ class CategoryEventContainer extends Component {
     }
   }
 
+  //loads the intial active category list based on the active category based into the component
   componentDidMount() {
     // Loads the events that match the active category when page initially loads
     const activeCategoryEvents = this.state.allEvents.filter(event => event.category === this.state.activeCategory )
@@ -25,6 +26,7 @@ class CategoryEventContainer extends Component {
   placeholderMethod = () => {
   }
 
+  //changes the active category based on user interaction
   onChange = (e) => {
     const activeCategoryEvents = this.state.allEvents.filter(event => event.category === e.target.value)
     const newCategory = e.target.value
@@ -48,9 +50,11 @@ class CategoryEventContainer extends Component {
             })}
           </select>
         </form>
-        {this.state.activeCategoryEvents.map((event, i) => {
-          return <Events eventInfo={event}/>
-        })}
+        <div className='eventContainer'>
+          {this.state.activeCategoryEvents.map((event, i) => {
+            return <Events eventInfo={event}/>
+          })}
+        </div>  
 
       </div>
             

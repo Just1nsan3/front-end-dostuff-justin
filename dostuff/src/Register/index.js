@@ -11,10 +11,9 @@ class Register extends Component {
 		}
 	}
 
-
+	//sends register attempt to the backend server
 	handleSubmit = async (e) => {
 		const theBody=JSON.stringify(this.state)
-		console.log(theBody, "here is the body in handleSubmit in Register")
 		e.preventDefault();
 		try {
 			const registerResponse = await fetch('http://localhost:8000/api/register', {
@@ -28,6 +27,7 @@ class Register extends Component {
 	
 		const registerResponseJSON = await registerResponse.json();
 
+		//checks status from server
 		console.log(registerResponseJSON, 'registerResponseJSON HERE')
 		if(registerResponseJSON.status === 200) {
 			this.props.register(this.state.location, registerResponseJSON.userid)
@@ -41,7 +41,7 @@ class Register extends Component {
 
 
 
-
+	//allows the user to change the state
 	handleChange = (e) => {
 		this.setState({[e.target.name]: e.target.value});
 	}
@@ -81,7 +81,7 @@ class Register extends Component {
 
 					</label>
 					
-					<input type='submit' />
+					<button>Submit</button>
 				</form>
 			</div>
 		)

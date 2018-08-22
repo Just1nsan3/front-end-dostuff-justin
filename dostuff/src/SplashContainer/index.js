@@ -15,6 +15,7 @@ class SplashContainer extends Component {
     }
   }
 
+  //attempts login to backend server
   handleSubmit = async (e) => {
     try{
       e.preventDefault();
@@ -27,18 +28,16 @@ class SplashContainer extends Component {
         }
       })
 
-
+      //parses response data to useable objects
       const loginResponseJSON = await loginResponse.json()
       const loginCategories = await JSON.parse(loginResponseJSON.categories)
 
       const userCats = []
-
+      //gets category names from response data
       for(let i = 0; i < loginCategories.length; i++) {
         userCats.push(loginCategories[i].fields.name)
       }  
-
-      console.log(loginResponseJSON)
-
+      //updates user info if login successful
       if(loginResponseJSON.status === 200) {
         this.props.login(loginResponseJSON.userid, userCats)
       }
@@ -48,7 +47,7 @@ class SplashContainer extends Component {
     }
   }
 
-
+  //change login input fields
   handleChange = (e) => {
     this.setState({[e.target.name]: e.target.value});
   }
@@ -73,7 +72,7 @@ class SplashContainer extends Component {
               </label>
               <input name='password' type='password' placeholder='Password' onChange={this.handleChange} />
             
-              <input type='submit' value='Login' />
+              <button>Submit</button>
             </form>
           </div>
 

@@ -15,7 +15,7 @@ class YourEventsContainer extends Component {
 
 
 
-  // I am not sure this is the right call
+  //adds events to user in backend serer
   addEvent = async (event, e) => {
     e.preventDefault();
     try {
@@ -35,7 +35,7 @@ class YourEventsContainer extends Component {
     }
   }
 
-
+  //deletes the event from the user database
   deleteEvent = async (id, e) => {
     e.preventDefault();
     console.log('deleteEvent function is being called, this is the id: ', id);

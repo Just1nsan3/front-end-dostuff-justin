@@ -4,9 +4,9 @@ import React, { Component } from 'react';
 
 class Categories extends Component {
 
+  //this will save the value of the category that was clicked by the user
   clickHandle = (e) => {
     e.preventDefault();
-    // console.log(e.currentTarg et.id)
     this.props.changeActiveCategory(e.currentTarget.id)
   }
 

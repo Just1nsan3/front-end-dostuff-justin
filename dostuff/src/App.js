@@ -3,15 +3,15 @@ import logo from './logo.svg';
 import './App.css';
 import Header from './Header';
 import CategoryEventContainer from './CategoryEventContainer'
-//import YourEventsContainer from './YourEventsContainer';
 import { withRouter, Route, Switch, Redirect} from 'react-router-dom';
 import Categories from './Categories';
 import SplashContainer from './SplashContainer';
 import Register from './Register'
 import Logout from './Logout'
 import AccountSettings from './AccountSettings'
+import YourEventsContainer from './YourEventsContainer'
 
-
+//Wrong page error message
 const My404 = () => {
   return (
     <div>
@@ -19,6 +19,7 @@ const My404 = () => {
     </div>
   )
 }
+
 
 class App extends Component {
   constructor() {
@@ -49,6 +50,7 @@ class App extends Component {
   placeholderMethod = () => {
   }
 
+  //called if login was successful
   login = (userId, userCategories) => {
     this.setState({
       loggedIn: true,
@@ -58,6 +60,7 @@ class App extends Component {
     this.props.history.push('/categories')
   }
 
+  //called if register was successful
   register = (location, userId) => {
 
     this.setState({
@@ -68,9 +71,10 @@ class App extends Component {
     //
     //  CHANGE TO ACCOUNT SETTINGS PAGE
     //
-    this.props.history.push('/categories')
+    this.props.history.push('/settings')
   }
 
+  //called if logout is successful
   logout = () => {
     this.setState({
       loggedIn: false,
@@ -89,6 +93,7 @@ class App extends Component {
     })
   }
 
+  //called if updateUser call is successful
   updateUser = (location, categories) => {
     this.setState({
       userLocation: location,
@@ -98,6 +103,7 @@ class App extends Component {
     this.props.history.push('/categories')
   }
 
+  //called when user adds/deletes from their saved categories list
   changeUserCategory = (category) => {
 
     if(this.state.userCategories.indexOf(category) === -1) {
@@ -138,7 +144,8 @@ class App extends Component {
     }
   }
 
-   changeActiveCategory = (category) => {
+  //called when user changes the events category they want to view
+  changeActiveCategory = (category) => {
     this.setState({
       activeCategory: category
     })
@@ -146,8 +153,6 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state.userCategories)
-    console.log(this.state.loggedIn)
     return (
       <main>
         <Header />
@@ -161,6 +166,8 @@ class App extends Component {
           <Route exact path='/register' render={() => <Register register={this.register} /> } />
           <Route exact path='/logout' render={() => <Logout logout={this.logout} loggedIn={this.state.loggedIn} history={this.props.history}/> } />
           <Route exact path='/settings' render={() => <AccountSettings userId={this.state.userId} loggedIn={this.state.loggedIn} userLocation={this.state.userLocation} userCategories={this.state.userCategories} categories={this.state.categories} changeUserCategory={this.changeUserCategory} updateUser={this.updateUser}/> } />
+          <Route exact path='/yourevents' render={() => <YourEventsContainer categories={this.state.categories} changeActiveCategory={this.changeActiveCategory} />}
+          />
 
           <Route component={My404}/>
         </Switch>
@@ -168,13 +175,6 @@ class App extends Component {
     )
   }
 }
-
-
-
-//<Route exact path="/YourEvents" component={YourEventsContainer} />
-// allEvents={this.state.allEvents} 
-//                     categories={this.state.categories}
-//                     activeCategory={this.state.activeCategory}
 
 
 export default withRouter(App);
