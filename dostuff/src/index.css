@@ -101,7 +101,7 @@ ul, li {
 
 
 .categoryList {
-	height: 60vh;
+	height: 70vh;
 	width: 60vw;
 	margin: 10px;
 	text-align: center;
@@ -110,80 +110,93 @@ ul, li {
 
 #categories #music {
 	background-image: url(https://i.imgur.com/5mdRkC0.jpg);
-	background-size: 100% 100%;
+	background-size: 60vw 70vh ;
 	cursor: pointer;
+	border-radius: 8px;
 }
 
 #categories #food-and-drink {
 	background-image: url(https://i.imgur.com/4qZoHq0.jpg);
-	background-size: 100% 100%;
+	background-size: 60vw 70vh;
 	cursor: pointer;
+	border-radius: 8px;
 }
 
 #categories #other {
 	background-image: url(https://i.imgur.com/AfT5tFj.jpg);
-	background-size: 100% 100%;
+	background-size: 60vw 70vh;
 	cursor: pointer;
+	border-radius: 8px;
 }
 
 #categories #performing-arts {
 	background-image: url(https://i.imgur.com/Y8LkT4d.jpg);
-	background-size: 100% 100%;
+	background-size: 60vw 70vh;
 	cursor: pointer;
+	border-radius: 8px;
 }
 
 #categories #charities {
 	background-image: url(https://i.imgur.com/kMrR2p1.jpg);
-	background-size: 100% 100%;
+	background-size: 60vw 70vh;
 	cursor: pointer;
+	border-radius: 8px;
 }
 
 #categories #festivals-fairs {
 	background-image: url(https://i.imgur.com/3KzrTjc.jpg);
-	background-size: 100% 100%;
+	background-size: 60vw 70vh;
 	cursor: pointer;
+	border-radius: 8px;
 }
 
 #categories #sports-active-life {
 	background-image: url(https://i.imgur.com/Rxc5mUb.jpg);
-	background-size: 100% 100%;
+	background-size: 60vw 70vh;
 	cursor: pointer;
+	border-radius: 8px;
 }
 
 #categories #nightlife {
 	background-image: url(https://i.imgur.com/HQAHeJL.jpg);
-	background-size: 100% 100%;
+	background-size: 60vw 70vh;
 	cursor: pointer;
+	border-radius: 8px;
 }
 
 #categories #visual-arts {
 	background-image: url(https://i.imgur.com/D6vLToO.jpg);
-	background-size: 100% 100%;
+	background-size: 60vw 70vh;
 	cursor: pointer;
+	border-radius: 8px;
 }
 
 #categories #kids-family {
 	background-image: url(https://i.imgur.com/9Wdah6E.jpg);
-	background-size: 100% 100%;
+	background-size: 60vw 70vh;
 	cursor: pointer;
+	border-radius: 8px;
 }
 
 #categories #fashion {
 	background-image: url(https://i.imgur.com/7gC8K1N.jpg);
-	background-size: 100% 100%;
+	background-size: 60vw 70vh;
 	cursor: pointer;
+	border-radius: 8px;
 }
 
 #categories #film {
 	background-image: url(https://i.imgur.com/Hc1jBpq.jpg);
-	background-size: 100% 100%;
+	background-size: 60vw 70vh;
 	cursor: pointer;
+	border-radius: 8px;
 }
 
 #categories #lectures-books {
 	background-image: url(https://i.imgur.com/eVjz1xT.jpg);
-	background-size: 100% 100%;
+	background-size: 60vw 70vh;
 	cursor: pointer;
+	border-radius: 8px;
 }
 
 .categoryList:hover {
