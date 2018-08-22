@@ -37,7 +37,7 @@ class Menu extends Component {
     return(
        <div>
         <button onClick={this.showMenu}>
-          Show menu
+          Menu
         </button>
         
         {
