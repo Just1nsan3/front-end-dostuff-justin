@@ -30,12 +30,102 @@ span, header, h3, ul, li, .login, .register, button, input {
 
 
 
+li, ul {
+	list-style: none;
+	padding-left: 0;
+}
+
+#categories {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+}
+
 .categoryList {
-	height: 5vh;
-	width: 50vw;
+	height: 60vh;
+	width: 60vw;
 	margin: 10px;
 	text-align: center;
 	background-color: rgba(122, 255, 122, .5);
+}
+
+#music {
+	background-image: url(https://i.imgur.com/5mdRkC0.jpg);
+	background-size: 100% 100%;
+	cursor: pointer;
+}
+
+#food-and-drink {
+	background-image: url(https://i.imgur.com/4qZoHq0.jpg);
+	background-size: 100% 100%;
+	cursor: pointer;
+}
+
+#other {
+	background-image: url(https://i.imgur.com/AfT5tFj.jpg);
+	background-size: 100% 100%;
+	cursor: pointer;
+}
+
+#performing-arts {
+	background-image: url(https://i.imgur.com/Y8LkT4d.jpg);
+	background-size: 100% 100%;
+	cursor: pointer;
+}
+
+#charities {
+	background-image: url(https://i.imgur.com/kMrR2p1.jpg);
+	background-size: 100% 100%;
+	cursor: pointer;
+}
+
+#festivals-fairs {
+	background-image: url(https://i.imgur.com/3KzrTjc.jpg);
+	background-size: 100% 100%;
+	cursor: pointer;
+}
+
+#sports-active-life {
+	background-image: url(https://i.imgur.com/Rxc5mUb.jpg);
+	background-size: 100% 100%;
+	cursor: pointer;
+}
+
+#nightlife {
+	background-image: url(https://i.imgur.com/HQAHeJL.jpg);
+	background-size: 100% 100%;
+	cursor: pointer;
+}
+
+#visual-arts {
+	background-image: url(https://i.imgur.com/D6vLToO.jpg);
+	background-size: 100% 100%;
+	cursor: pointer;
+}
+
+#kids-family {
+	background-image: url(https://i.imgur.com/9Wdah6E.jpg);
+	background-size: 100% 100%;
+	cursor: pointer;
+}
+
+#fashion {
+	background-image: url(https://i.imgur.com/7gC8K1N.jpg);
+	background-size: 100% 100%;
+	cursor: pointer;
+}
+
+#film {
+	background-image: url(https://i.imgur.com/Hc1jBpq.jpg);
+	background-size: 100% 100%;
+	cursor: pointer;
+}
+
+#lectures-books {
+	background-image: url(https://i.imgur.com/eVjz1xT.jpg);
+	background-size: 100% 100%;
+	cursor: pointer;
 }
 
 .categoryList:hover {
