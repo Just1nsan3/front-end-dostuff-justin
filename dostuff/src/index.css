@@ -2,16 +2,12 @@ body {
 	text-align: center;
 }
 
-ul, li {
-	list-style: none;
-	padding-left: 0;
-}
-
 /*.register {
 	display: flex;
 	
 }
 */
+
 .categoryList {
 	height: 5vh;
 	width: 50vw;
@@ -22,6 +18,7 @@ ul, li {
 
 .categoryList:hover {
 	background-color: rgba(255, 255, 122, .5);
+
 }
 
 
@@ -51,3 +48,13 @@ ul, li {
 	background-image: url('https://i.imgur.com/Hc1jBpq.jpg');
 }
 
+@media only screen and (max-width: 1440px) {
+section{max-width:95%;}
+}
+
+@media only screen and (max-width: 980px) {}
+
+
+@media only screen and (max-width: 980px) {
+.content{width:90%;}
+}
