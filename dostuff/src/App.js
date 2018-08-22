@@ -49,10 +49,11 @@ class App extends Component {
   placeholderMethod = () => {
   }
 
-  login = (userId) => {
+  login = (userId, userCategories) => {
     this.setState({
       loggedIn: true,
-      userId: userId
+      userId: userId, 
+      userCategories: userCategories
     })
     this.props.history.push('/categories')
   }
@@ -88,6 +89,32 @@ class App extends Component {
     })
   }
 
+  updateUser = (location, categories) => {
+    this.setState({
+      userLocation: location,
+      userCategories: categories
+    })
+
+    this.props.history.push('/categories')
+  }
+
+  changeUserCategory = (category) => {
+
+    if(this.state.userCategories.indexOf(category) === -1) {
+      this.setState({
+        userCategories: [...this.state.userCategories, category]
+      })
+    } else {
+        const stateCategories = this.state.userCategories;
+        const index = this.state.userCategories.indexOf(category);
+        stateCategories.splice(index, 1)
+
+        this.setState({
+          userCategories: stateCategories
+        })
+    }
+  }
+
   //makes original fetch call to API to get updated data
   addInitialData = async () => {
     try {
@@ -119,6 +146,7 @@ class App extends Component {
   }
 
   render() {
+    console.log(this.state.userCategories)
     return (
       <main>
         <Header />
@@ -131,7 +159,7 @@ class App extends Component {
           />
           <Route exact path='/register' render={() => <Register register={this.register} /> } />
           <Route exact path='/logout' render={() => <Logout logout={this.logout} /> } />
-          <Route exact path='/settings' render={() => <AccountSettings loggedIn={this.state.loggedIn} userLocation={this.state.userLocation} categories={this.state.categories} /> } />
+          <Route exact path='/settings' render={() => <AccountSettings userId={this.state.userId} loggedIn={this.state.loggedIn} userLocation={this.state.userLocation} categories={this.state.categories} changeUserCategory={this.changeUserCategory} updateUser={this.updateUser}/> } />
 
           <Route component={My404}/>
         </Switch>

@@ -1,4 +1,4 @@
-*{text-decoration:none; list-style:none; margin:0px; padding:0px; outline:none;}
+/**{text-decoration:none; list-style:none; margin:0px; padding:0px; outline:none;}
 body{margin:0px; padding:0px; font-family: 'Open Sans', sans-serif;}
 section{width:100%; max-width:1200px; margin:0px auto; display:table; position:relative;}
 h1{margin:0px auto; display:table; font-size:26px; padding:40px 0px; color:#002e5b; text-align:center;}
@@ -63,8 +63,10 @@ nav ul li a i{color:#fde428; padding-right:13px;}
 	text-align: center;
 	margin: 10px;
 	background-color: rgba(122, 255, 122, .5);
-	background-color: rgba(255, 255, 122, .5);
+}
 
+.settingsCategory:hover {
+	background-color: rgba(255, 255, 55, .5);
 }
 
 
@@ -104,3 +106,4 @@ h1 {padding: 20px 0px;}
 	background-image: url('https://i.imgur.com/Hc1jBpq.jpg');
 }
 
+*/
