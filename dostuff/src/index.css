@@ -10,13 +10,13 @@ header {
 	background-color: ;
 }
 
-.splashContainer {
+.splashContainer, .registerContainer {
 	display: flex;
 	justify-content: center;
 
 }
 
-.splash {
+.splash, .register {
 	 background-color: #EF476F;
 	 width: 30vw;
 	 padding: 20px;
@@ -34,7 +34,12 @@ header {
 }
 
 button {
-	cursor: pointer;
+	width: 10vw;
+	height: 5vh;
+	cursor: pointer; 
+	background-color: #EF476F;
+	border: 3px solid white;
+	box-shadow: 10px 10px 10px rgba(20, 20, 20, .25);
 }
 
 .register button {
@@ -48,7 +53,7 @@ button {
 }
 
 .categoryList span {
-	background-color: #05C491;
+	background-color: #EF476F;
 	border: 1px solid #4C3C1B;
 	padding: 0px 8px 4px 8px;
 	width: 300px;
@@ -129,7 +134,7 @@ button {
 	height: 20vh;
 	width: 50vw;
 	display: flex;
-	background-color: darkred;
+	background-color: #EF476F;
 	border: 7px solid white;
 	box-shadow: 10px 10px 10px rgba(20, 20, 20, .25);
 }
@@ -137,11 +142,17 @@ button {
 a {
 	text-decoration: none;
 	color: #FFD166;
+	font-family: 'Roboto Slab';
 }
 
 a:hover {
 	text-decoration: none;
-	color: blue;
+	color: #118AB2;
+	text-shadow: -1px 1px 0 #FFD166,
+				  1px 1px 0 #FFD166,
+				 1px -1px 0 #FFD166,
+				-1px -1px 0 #FFD166;
+
 }
 
 
@@ -337,7 +348,7 @@ ul, li {
 }
 
 .settingsCategory:hover {
-	background-color: darkred;
+	background-color: #EF476F;
 }
 
 .clicked {
