@@ -37,7 +37,7 @@ class Menu extends Component {
 
   render(){
     return(
-       <div>
+       <div className='menuButton'>
         <button onClick={this.showMenu}>
           Menu
         </button>
