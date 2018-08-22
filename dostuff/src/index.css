@@ -73,6 +73,7 @@ li, ul {
 button {
 	background-color: #118AB2;
 	color: #FFD166;
+	margin-top: 10px;
 }
 
 .eventContainer {
