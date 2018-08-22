@@ -29,7 +29,6 @@ span, header, h3, ul, li, .login, .register, button, input {
 }
 
 
-
 li, ul {
 	list-style: none;
 	padding-left: 0;
@@ -64,6 +63,7 @@ button {
 	width: 50vw;
 	display: flex;
 }
+
 ul, li {
 	list-style: none;
 	padding-left: 0;
