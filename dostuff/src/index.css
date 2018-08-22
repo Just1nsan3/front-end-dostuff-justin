@@ -7,6 +7,7 @@ body {
 header {
 	display: flex;
 	justify-content: space-between;
+	background-color: ;
 }
 
 
@@ -44,7 +45,6 @@ li, ul {
 span, header, h3, ul, li, .login, .register, button, input {
 	font-family: 'Roboto Slab';
 }
-
 
 .input {
 	max-width: 200px;
