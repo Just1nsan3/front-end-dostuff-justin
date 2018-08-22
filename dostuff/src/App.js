@@ -6,10 +6,11 @@ import CategoryEventContainer from './CategoryEventContainer'
 import { withRouter, Route, Switch, Redirect} from 'react-router-dom';
 import Categories from './Categories';
 import SplashContainer from './SplashContainer';
-import Register from './Register'
-import Logout from './Logout'
-import AccountSettings from './AccountSettings'
-import YourEventsContainer from './YourEventsContainer'
+import Register from './Register';
+import Logout from './Logout';
+import AccountSettings from './AccountSettings';
+import YourEventsContainer from './YourEventsContainer';
+import Footer from './Footer';
 
 //Wrong page error message
 const My404 = () => {
@@ -171,6 +172,7 @@ class App extends Component {
 
           <Route component={My404}/>
         </Switch>
+        <Footer />
       </main>
     )
   }
