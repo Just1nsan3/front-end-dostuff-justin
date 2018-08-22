@@ -13,6 +13,11 @@ header {
 .menuButton button{
 	width: 10vw;
 	height: 5vh;
+	cursor: pointer;
+}
+
+button {
+	cursor: pointer;
 }
 
 .register button {
