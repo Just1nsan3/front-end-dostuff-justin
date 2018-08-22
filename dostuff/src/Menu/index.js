@@ -52,12 +52,12 @@ class Menu extends Component {
                 }}
               >
             <ul>
-              <li className='menuToggle'><Link to='/'>Home</Link></li>
-              <li className='menuToggle'><Link to='/yourEvents'>Your Events</Link></li>
-              <li className='menuToggle'><Link to='/settings'>Account Settings</Link></li>
-              <li className='menuToggle'><Link to='/categories'>Your Interests</Link></li>
-              <li className='menuToggle'><Link to='/categoryevent'>Category Events</Link></li>
-              <li className='menuToggle'><Link to='/logout'>Logout</Link></li>
+              <li className='menuToggle'><Link style={{ textDecoration: 'none'}} to='/'><span className='menuText'>Home</span></Link></li>
+              <li className='menuToggle'><Link style={{ textDecoration: 'none'}} to='/yourEvents'><span className='menuText'>Your Events</span></Link></li>
+              <li className='menuToggle'><Link style={{ textDecoration: 'none'}} to='/settings'><span className='menuText'>Account Settings</span></Link></li>
+              <li className='menuToggle'><Link style={{ textDecoration: 'none'}} to='/categories'><span className='menuText'>Your Interests</span></Link></li>
+              <li className='menuToggle'><Link style={{ textDecoration: 'none'}} to='/categoryevent'><span className='menuText'>Category Events</span></Link></li>
+              <li className='menuToggle'><Link style={{ textDecoration: 'none'}} to='/logout'><span className='menuText'>Logout</span></Link></li>
             </ul>
           </div>
             )

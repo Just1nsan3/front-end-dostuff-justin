@@ -10,6 +10,20 @@ header {
 }
 
 
+.categoryList span {
+	background-color: white;
+}
+
+
+.menuText {
+	color: #B4FFDA;
+	text-decoration: none;
+}
+
+.menuText:visited {
+    text-decoration: none;
+}
+
 li, ul {
 	list-style: none;
 	padding-left: 0;
