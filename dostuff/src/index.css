@@ -12,6 +12,9 @@ header {
 
 .categoryList span {
 	background-color: white;
+	padding: 0 4px;
+	border: 5px white;
+	border-radius: 5%
 }
 
 
