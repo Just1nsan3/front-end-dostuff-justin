@@ -11,6 +11,8 @@ import Logout from './Logout';
 import AccountSettings from './AccountSettings';
 import YourEventsContainer from './YourEventsContainer';
 import Footer from './Footer';
+import MarkerContainer from './MarkerContainer';
+import MapContainer from './MapContainer';
 
 //Wrong page error message
 const My404 = () => {
@@ -43,7 +45,10 @@ class App extends Component {
       //category that user last picked in home page
       activeCategory: 'other',
       //track status of user login
-      loggedIn: false
+      loggedIn: false,
+      //shows google map
+      map: ''
+
     }
   }
 
@@ -154,6 +159,7 @@ class App extends Component {
   }
 
   render() {
+    console.log(this.state.allEvents, 'this is all events')
     return (
       <main>
         <Header />
@@ -172,7 +178,8 @@ class App extends Component {
 
           <Route component={My404}/>
         </Switch>
-        <Footer />
+        <MapContainer allEvents={this.state.allEvents} />
+        
       </main>
     )
   }
