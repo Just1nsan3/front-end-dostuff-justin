@@ -20,11 +20,6 @@ class MarkerContainer extends Component {
 		})
 
 
-		// const state = this.state
-		// // change stuff in state
-		// this.setState(state)
-
-
     }
     handleToggleClose = () => {
         this.setState({
@@ -36,7 +31,8 @@ class MarkerContainer extends Component {
 
 
 
-
+// centers you to chicago, IL and shows markers that are clickable
+// markers show pulled data of events happening in chicago
     	return(
     	
         	<GoogleMap
@@ -57,7 +53,11 @@ class MarkerContainer extends Component {
 			            >
 			            {this.state.isOpen === i ?
 			                 <InfoWindow onCloseClick={this.handleToggleOpen}>
+			                 <div>
 			                      <h4>{event.name}</h4>
+			                      <a className='markerEvent' target='_blank' href={event.url}>Click here!</a>
+			                      <img className='eventImg' src={event.image_url} />
+			                 </div>
 			                 </InfoWindow> : null
          				}
 			            </Marker>
