@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import {Route, Switch, Redirect} from 'react-router-dom';
 import {Link} from 'react-router-dom';
 import PasswordMask from 'react-password-mask';
-import LocationContainer from '../LocationContainer';
+import MapContainer from '../MapContainer';
 
 
 class SplashContainer extends Component {

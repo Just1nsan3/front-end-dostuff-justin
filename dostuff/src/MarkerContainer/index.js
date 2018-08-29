@@ -1,10 +1,9 @@
 import React from 'react';
-import {withScriptjs, withGoogleMap, GoogleMap, Marker} from 'react-google-maps';
+import {withScriptjs, withGoogleMap, GoogleMap, Marker, InfoWindow} from 'react-google-maps';
 
 
 
 const MarkerContainer = (props) => {
-	console.log(props.allEvents)
 	const markers = props.allEvents.map((event, i) => {
 
 		return(
@@ -13,19 +12,25 @@ const MarkerContainer = (props) => {
 						lat: event.latitude,
 						lng: event.longitude
 					}}
-			/>
+			>
+			<InfoWindow><h1>Please Show up</h1></InfoWindow>
+			</Marker>
 		)
 	})
 	return(
-		<GoogleMap
-	    	center={{lat:41.881832, lng: -87.623177}}
-	    	zoom={10}
-	    >
-	     	{markers} 
-	  	</GoogleMap>
+		
+
+			<GoogleMap
+		    	center={{lat:41.881832, lng: -87.623177}}
+		    	zoom={10}
+		    >
+		    	{markers}
+		  	</GoogleMap>
+
+	  	
 
 	)
 }
-export default withGoogleMap(MarkerContainer);
 
+export default withGoogleMap(MarkerContainer);
 
