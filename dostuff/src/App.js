@@ -178,7 +178,15 @@ class App extends Component {
 
           <Route component={My404}/>
         </Switch>
-        <MapContainer allEvents={this.state.allEvents} />
+         
+          <MarkerContainer
+              allEvents={this.state.allEvents}
+              containerElement={<div style={{ height: `80vh` }} />}
+              mapElement={<div style={{ height: `100%` }} />}
+              googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyBHLett8djBo62dDXj0EjCimF8Rd6E8cxg&callback=initMap" 
+              loadingElement={<div style={{ height: `100%` }} />}
+            />
+        
         
       </main>
     )
