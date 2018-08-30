@@ -36,24 +36,15 @@ class MarkerContainer extends Component {
     return(
     	
         	<GoogleMap
-                center={{lat:41.881832, lng: -87.623177}}
+                defaultCenter={{lat:41.881832, lng: -87.623177}}
                 zoom={13}
                 defaultOptions={{ styles: [
     {
         "featureType": "administrative",
-        "elementType": "all",
+        "elementType": "labels.text.fill",
         "stylers": [
             {
-                "saturation": "-100"
-            }
-        ]
-    },
-    {
-        "featureType": "administrative.province",
-        "elementType": "all",
-        "stylers": [
-            {
-                "visibility": "off"
+                "color": "#444444"
             }
         ]
     },
@@ -62,13 +53,7 @@ class MarkerContainer extends Component {
         "elementType": "all",
         "stylers": [
             {
-                "saturation": -100
-            },
-            {
-                "lightness": 65
-            },
-            {
-                "visibility": "on"
+                "color": "#f2f2f2"
             }
         ]
     },
@@ -77,13 +62,7 @@ class MarkerContainer extends Component {
         "elementType": "all",
         "stylers": [
             {
-                "saturation": -100
-            },
-            {
-                "lightness": "50"
-            },
-            {
-                "visibility": "simplified"
+                "visibility": "off"
             }
         ]
     },
@@ -92,7 +71,10 @@ class MarkerContainer extends Component {
         "elementType": "all",
         "stylers": [
             {
-                "saturation": "-100"
+                "saturation": -100
+            },
+            {
+                "lightness": 45
             }
         ]
     },
@@ -107,19 +89,10 @@ class MarkerContainer extends Component {
     },
     {
         "featureType": "road.arterial",
-        "elementType": "all",
+        "elementType": "labels.icon",
         "stylers": [
             {
-                "lightness": "30"
-            }
-        ]
-    },
-    {
-        "featureType": "road.local",
-        "elementType": "all",
-        "stylers": [
-            {
-                "lightness": "40"
+                "visibility": "off"
             }
         ]
     },
@@ -128,37 +101,19 @@ class MarkerContainer extends Component {
         "elementType": "all",
         "stylers": [
             {
-                "saturation": -100
-            },
-            {
-                "visibility": "simplified"
+                "visibility": "off"
             }
         ]
     },
     {
         "featureType": "water",
-        "elementType": "geometry",
+        "elementType": "all",
         "stylers": [
             {
-                "hue": "#ffff00"
+                "color": "#46bcec"
             },
             {
-                "lightness": -25
-            },
-            {
-                "saturation": -97
-            }
-        ]
-    },
-    {
-        "featureType": "water",
-        "elementType": "labels",
-        "stylers": [
-            {
-                "lightness": -25
-            },
-            {
-                "saturation": -100
+                "visibility": "on"
             }
         ]
     }

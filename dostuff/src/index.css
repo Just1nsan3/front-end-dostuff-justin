@@ -143,6 +143,11 @@ button {
 	justify-content: center;
 }
 
+.markerCont {
+	display: flex;
+	justify-content: center;
+}
+
 .events {
 	margin: 20px;
 	height: 20vh;

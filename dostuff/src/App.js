@@ -182,9 +182,9 @@ class App extends Component {
           <MarkerContainer
               allEvents={this.state.allEvents}
               containerElement={<div style={{ height: `80vh` }} />}
-              mapElement={<div style={{ height: `100%` }} />}
+              mapElement={<div style={{ height: `70%` }} />}
               googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyBHLett8djBo62dDXj0EjCimF8Rd6E8cxg&callback=initMap" 
-              loadingElement={<div style={{ height: `100%` }} />}
+              loadingElement={<div style={{ height: `70%` }} />}
             />
         
         
